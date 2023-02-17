@@ -39,7 +39,7 @@ struct DalleView: View {
                 Spacer()
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
-                        .padding(12)
+                        .padding(10)
                         .font(.callout)
                         .lineLimit(3)
                         .disableAutocorrection(true)
@@ -55,11 +55,13 @@ struct DalleView: View {
                             }
                         }
                     } label: {
-                        Image(systemName: "paperplane.fill")
+                        Image(systemName: typingMessage == "" ? "circle" : "paperplane.fill")
                             .foregroundColor(.green)
                             .rotationEffect(.degrees(45))
-                            .font(.system(size: 34))
+                            .frame(width: 35, height: 35)
+                            .scaleEffect(typingMessage == "" ? 1.2 : 1.5)
                     }
+
                 }
                 .padding()
             }

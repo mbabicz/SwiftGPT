@@ -40,7 +40,7 @@ struct ChatBotView: View {
                 
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
-                        .padding(12)
+                        .padding(10)
                         .font(.callout)
                         .lineLimit(3)
                         .disableAutocorrection(true)
@@ -48,14 +48,17 @@ struct ChatBotView: View {
                         .background(Capsule().stroke(Color.gray, lineWidth: 1))
                     
                     Button {
-                        botVM.getResponse(text: self.typingMessage)
-                        self.typingMessage = ""
+                        if self.typingMessage != "" {
+                            botVM.getResponse(text: self.typingMessage)
+                            self.typingMessage = ""
+                        }
                         
                     } label: {
-                        Image(systemName: "paperplane.fill")
+                        Image(systemName: typingMessage == "" ? "circle" : "paperplane.fill")
                             .foregroundColor(.green)
                             .rotationEffect(.degrees(45))
-                            .font(.system(size: 34))
+                            .frame(width: 35, height: 35)
+                            .scaleEffect(typingMessage == "" ? 1.2 : 1.5)
                     }
                 }
                 .padding()
