@@ -8,43 +8,36 @@
 import SwiftUI
 
 struct ChatBotView: View {
-    
+
     @ObservedObject var botVM = ChatBotViewModel()
     @State var typingMessage: String = ""
-    @State var models = [String]()
     @Namespace var bottomID
-    
+
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
                 ScrollViewReader { reader in
                     ScrollView(.vertical) {
-                        ForEach(models, id: \.self) { message in
-                            HStack {
-                                if message.contains("Me: ") {
-                                    MessageView(message: message.replacingOccurrences(of: "Me: ", with: ""), isUserMessage: true, isBotMessage: false)
-                                } else if message.contains("ChatBot: ") {
-                                    MessageView(message: message.replacingOccurrences(of: "ChatBot: ", with: "").trimmingCharacters(in: .whitespacesAndNewlines), isUserMessage: false, isBotMessage: true)
-                                } else {
-                                    MessageIndicatorView()
-                                    Spacer()
-                                }
+                        if botVM.messages.count > 0{
+                            ForEach(botVM.messages.indices, id: \.self){ index in
+                                let message = botVM.messages[index]
+                                MessageView(message: message)
                             }
                         }
                         Text("").id(bottomID)
                     }
-                    
                     .onAppear{
                         withAnimation{
                             reader.scrollTo(bottomID)
                         }
                     }
-                    .onChange(of: models.count){ _ in
+                    .onChange(of: botVM.messages.count){ _ in
                         withAnimation{
                             reader.scrollTo(bottomID)
                         }
                     }
                 }
+                
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
                         .padding(12)
@@ -53,9 +46,9 @@ struct ChatBotView: View {
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .background(Capsule().stroke(Color.gray, lineWidth: 1))
-                        
+                    
                     Button {
-                        send()
+                        botVM.getResponse(text: self.typingMessage)
                         self.typingMessage = ""
                         
                     } label: {
@@ -69,22 +62,6 @@ struct ChatBotView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle("ChatBot")
-        }
-    }
-    
-    func send() {
-        guard !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty,
-            models.isEmpty || models.last != "Me: \(typingMessage)" else {
-            return
-        }
-        models.append("Me: \(typingMessage)")
-        models.append("Waiting:")
-
-        botVM.send(text: typingMessage) { response in
-            DispatchQueue.main.async {
-                self.models.removeLast()
-                self.models.append("ChatBot: \(response)")
-            }
         }
     }
 }

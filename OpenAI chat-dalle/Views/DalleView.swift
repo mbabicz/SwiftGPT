@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DalleView: View {
     @State var typingMessage: String = ""
-    @ObservedObject var DalleVM = DalleViewModel()
-    @State var models: [Any] = []
+    @ObservedObject var dalleVM = DalleViewModel()
     @Namespace var bottomID
 
     var body: some View {
@@ -18,19 +17,10 @@ struct DalleView: View {
             VStack(alignment: .leading){
                 ScrollViewReader { reader in
                     ScrollView(.vertical) {
-                        ForEach(0 ..< models.count, id: \.self) { index in
-                            let model = models[index]
-                            HStack {
-                                if let text = model as? String {
-                                    MessageView(message: text.replacingOccurrences(of: "Me: ", with: ""), isUserMessage: true, isBotMessage: false)
-                                } else if let image = model as? UIImage {
-                                    Image(uiImage: image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .cornerRadius(13)
-                                        .shadow(color: .green , radius: 4)
-                                        .padding()
-                                }
+                        if dalleVM.messages.count > 0{
+                            ForEach(dalleVM.messages.indices, id: \.self){ index in
+                                let message = dalleVM.messages[index]
+                                MessageView(message: message)
                             }
                         }
                         Text("").id(bottomID)
@@ -40,7 +30,7 @@ struct DalleView: View {
                             reader.scrollTo(bottomID)
                         }
                     }
-                    .onChange(of: models.count){ _ in
+                    .onChange(of: dalleVM.messages.count){ _ in
                         withAnimation{
                             reader.scrollTo(bottomID)
                         }
@@ -55,13 +45,13 @@ struct DalleView: View {
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .background(Capsule().stroke(Color.gray, lineWidth: 1))
-                        
+                    
                     Button {
-                        if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
-                            models.append(typingMessage)
-                            Task{
-                                models.append(await DalleVM.generateImage(prompt: typingMessage)!)
+                        Task{
+                            if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
+                                let tempMessage = typingMessage
                                 typingMessage = ""
+                                await dalleVM.generateImage(prompt: tempMessage)
                             }
                         }
                     } label: {

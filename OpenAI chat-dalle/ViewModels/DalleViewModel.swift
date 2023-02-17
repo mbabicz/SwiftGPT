@@ -12,6 +12,7 @@ import UIKit
 class DalleViewModel: ObservableObject {
     private let apiKey: String
     private var openAI: OpenAI
+    @Published var messages = [Message]()
 
     init() {
         guard let filePath = Bundle.main.path(forResource: "Api-keys", ofType: "plist"),
@@ -22,19 +23,36 @@ class DalleViewModel: ObservableObject {
         }
         apiKey = value
         openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
-        
     }
     
-    func generateImage(prompt: String) async -> UIImage? {
-        let imageParam = ImageParameters(prompt: prompt, resolution: .medium, responseFormat: .base64Json)
+    func generateImage(prompt: String) async {
+        self.addMessage(prompt, type: .text, isUserMessage: true)
+        self.addMessage(prompt, type: .indicator, isUserMessage: false)
         
+        let imageParam = ImageParameters(prompt: prompt, resolution: .medium, responseFormat: .base64Json)
+
         do {
             let result = try await openAI.createImage(parameters: imageParam)
             let b64Image = result.data[0].image
-            return try openAI.decodeBase64Image(b64Image)
+            let output = try openAI.decodeBase64Image(b64Image)
+            self.removeLoadingIndicator()
+            self.addMessage(output, type: .image, isUserMessage: false)
         } catch {
             print(error)
-            return nil
+            self.removeLoadingIndicator()
+            self.addMessage(error.localizedDescription, type: .text, isUserMessage: false)
         }
+    }
+    
+    private func addMessage(_ content: Any, type: MessageType, isUserMessage: Bool) {
+        DispatchQueue.main.async {
+            let message = Message(content: content, type: type, isUserMessage: isUserMessage)
+            self.messages.append(message)
+            print(self.messages)
+        }
+    }
+
+    private func removeLoadingIndicator() {
+        self.messages.removeLast()
     }
 }

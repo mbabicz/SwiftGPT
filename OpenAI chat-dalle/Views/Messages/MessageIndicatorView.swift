@@ -23,7 +23,7 @@ struct MessageIndicatorView: View {
 }
 
 struct DotView: View {
-    
+
     @State var scale: CGFloat = 0.5
     @State var delay: Double = 0
     var body: some View {

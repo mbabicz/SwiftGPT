@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29646507299F7E12005146FD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29646506299F7E12005146FD /* Message.swift */; };
 		2981BF12299256BB00D40C7A /* OpenAI_chat_dalleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF11299256BB00D40C7A /* OpenAI_chat_dalleApp.swift */; };
 		2981BF14299256BB00D40C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF13299256BB00D40C7A /* ContentView.swift */; };
 		2981BF16299256BE00D40C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2981BF15299256BE00D40C7A /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29646506299F7E12005146FD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2981BF0E299256BB00D40C7A /* OpenAI chat-dalle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenAI chat-dalle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981BF11299256BB00D40C7A /* OpenAI_chat_dalleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI_chat_dalleApp.swift; sourceTree = "<group>"; };
 		2981BF13299256BB00D40C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29646505299F7E02005146FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29646506299F7E12005146FD /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2981BF05299256BB00D40C7A = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		2981BF10299256BB00D40C7A /* OpenAI chat-dalle */ = {
 			isa = PBXGroup;
 			children = (
+				29646505299F7E02005146FD /* Models */,
 				2981BF262992583C00D40C7A /* ViewModels */,
 				2981BF252992581600D40C7A /* Views */,
 				2981BF11299256BB00D40C7A /* OpenAI_chat_dalleApp.swift */,
@@ -198,6 +209,7 @@
 				2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */,
 				2981BF292992588600D40C7A /* ChatBotView.swift in Sources */,
 				2981BF312992591400D40C7A /* ChatBotViewModel.swift in Sources */,
+				29646507299F7E12005146FD /* Message.swift in Sources */,
 				2981BF14299256BB00D40C7A /* ContentView.swift in Sources */,
 				2981BF12299256BB00D40C7A /* OpenAI_chat_dalleApp.swift in Sources */,
 				2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */,
