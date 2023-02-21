@@ -14,11 +14,10 @@ The DALL-E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/OpenA
 * You can also create a property file called 'Api-keys' and add API_KEY row there. <br /> <br />
 
 __OPENAI CHATBOT__ <br />
-<img src = "https://user-images.githubusercontent.com/49866616/220465595-f6acb422-bd1f-486f-b729-a83adbf95acd.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/220465716-4d58ee80-3200-4189-9f1f-a449602b9e08.png"  width="286" height="558" /> <br />
+<img src = "https://user-images.githubusercontent.com/49866616/220471468-b9a92f20-027d-4258-87fc-c300425d3d17.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/220471564-14265138-4158-4d69-a817-4743ac62279a.png"  width="286" height="558" /> <br />
 
 __OPENAI DALL-E 2__ <br />
-<img src = "https://user-images.githubusercontent.com/49866616/220465239-519a1a18-4a44-447f-85d5-03a0a6673b01.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/220465372-f8a54e5d-d8a9-4833-8687-0a9ed635a466.png"  width="286" height="558" /> <br />
-
+<img src = "https://user-images.githubusercontent.com/49866616/220471779-1c752dc6-2d30-4c5f-a9b5-8f06f3fb3379.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/220471898-a4b5652b-3d17-4de2-a0c9-071d556c8d02.png"  width="286" height="558" /> <br />
 
 ## BUILT WITH
 <img src = "https://user-images.githubusercontent.com/49866616/213214287-6849916c-ddb3-48ad-bdde-2013f3315b93.png" width="55" height="55" /> <br />
