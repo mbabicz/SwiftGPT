@@ -5,21 +5,19 @@ SwiftUI app integrates with OpenAI's API and features a chat with GPT-3 and DALL
 ## ABOUT THE PROJECT
 SwiftUI MVVM application that contains OpenAI GPT-3 chat bot and OpenAI DALL-E 2 system. OpenAI client providing GPT-3 is implemented with [this library](https://github.com/adamrushy/OpenAISwift). 
 The DALL-E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit). To use OpenAI you need to get your api [here](https://openai.com/api/).  <br /> <br />
-<img src = "https://user-images.githubusercontent.com/49866616/219652832-05585201-4165-41a4-8d62-f10cd4ec0823.gif" width="300" height="600" />
-<img src = "https://user-images.githubusercontent.com/49866616/219653099-1cc309df-d7b1-42a1-a408-2d29075bdb5d.gif" width="300" height="600" /> <br />
-
-
+<img src = "https://user-images.githubusercontent.com/49866616/220469281-ba9f2387-689a-4b00-bb22-3e14b4ac8f6e.gif" width="300" height="600" />
+<img src = "https://user-images.githubusercontent.com/49866616/220467565-49b05ddb-e7f2-4a78-861d-3013302dcb30.gif" width="300" height="600" /> <br />
 
 ## INSTALLATION
-* Install all required pods (OpenAIKit, OpenAISwift) <br />
+* Install all required packages ([OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit), [OpenAISwift](https://github.com/adamrushy/OpenAISwift), [SlidingTabView](https://github.com/QuynhNguyen/SlidingTabView)) <br />
 * Enter your api key here: _ChattingAPP/ViewModel/ChatBotViewModel.swift_ <br />
 * You can also create a property file called 'Api-keys' and add API_KEY row there. <br /> <br />
 
 __OPENAI CHATBOT__ <br />
-<img src = "https://user-images.githubusercontent.com/49866616/217290752-66eca3ca-42ce-4e47-b377-d1b6bce599d7.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/217287659-e206cdd1-4f54-4c0f-9c09-a9f1487b6d62.png"  width="286" height="558" /> <br />
+<img src = "https://user-images.githubusercontent.com/49866616/220465595-f6acb422-bd1f-486f-b729-a83adbf95acd.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/220465716-4d58ee80-3200-4189-9f1f-a449602b9e08.png"  width="286" height="558" /> <br />
 
 __OPENAI DALL-E 2__ <br />
-<img src = "https://user-images.githubusercontent.com/49866616/217291604-b74a2bfb-aec6-48f4-b963-475dcec0dd39.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/217288202-ae36faf0-62d6-4f24-ac58-241509b73f1d.png"  width="286" height="558" /> <br />
+<img src = "https://user-images.githubusercontent.com/49866616/220465239-519a1a18-4a44-447f-85d5-03a0a6673b01.png"  width="286" height="558" /> <img src = "https://user-images.githubusercontent.com/49866616/220465372-f8a54e5d-d8a9-4833-8687-0a9ed635a466.png"  width="286" height="558" /> <br />
 
 
 ## BUILT WITH
