@@ -18,7 +18,7 @@ struct ContentView: View {
                 DalleView().tabItem {
                     Image(systemName: "paintbrush.pointed.fill")
                 }.tag(1)
-            }.accentColor(.green)
+            }
         }
     }
 }

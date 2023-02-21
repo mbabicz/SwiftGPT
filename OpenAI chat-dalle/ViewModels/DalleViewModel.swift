@@ -48,7 +48,6 @@ class DalleViewModel: ObservableObject {
         DispatchQueue.main.async {
             let message = Message(content: content, type: type, isUserMessage: isUserMessage)
             self.messages.append(message)
-            print(self.messages)
         }
     }
 

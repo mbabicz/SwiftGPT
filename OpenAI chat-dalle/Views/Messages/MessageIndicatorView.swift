@@ -14,11 +14,11 @@ struct MessageIndicatorView: View {
             DotView(delay: 0.2)
             DotView(delay: 0.4)
         }
-        .padding(16)
-        .foregroundColor(.black)
+        .padding(12)
+        //.foregroundColor(.black)
         .background(Color.gray.opacity(0.25))
         .cornerRadius(25)
-        .padding(.leading)
+        //.padding(.leading)
     }
 }
 
@@ -28,7 +28,7 @@ struct DotView: View {
     @State var delay: Double = 0
     var body: some View {
         Circle()
-            .frame(width: 8, height: 8)
+            .frame(width: 7, height: 7)
             .scaleEffect(scale)
             .onAppear {
                 withAnimation(Animation.easeInOut.repeatForever().delay(delay)) {

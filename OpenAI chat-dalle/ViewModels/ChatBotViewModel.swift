@@ -36,7 +36,6 @@ class ChatBotViewModel: ObservableObject {
             case .failure(let error):
                 self.removeLoadingIndicator()
                 self.addMessage(error.localizedDescription, type: .text, isUserMessage: false)
-
             }
         }
     }
@@ -45,7 +44,6 @@ class ChatBotViewModel: ObservableObject {
         DispatchQueue.main.async {
             let message = Message(content: content, type: type, isUserMessage: isUserMessage)
             self.messages.append(message)
-            print(self.messages)
         }
     }
 

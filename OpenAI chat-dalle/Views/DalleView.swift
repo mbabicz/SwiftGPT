@@ -9,62 +9,74 @@ import SwiftUI
 
 struct DalleView: View {
     @State var typingMessage: String = ""
-    @ObservedObject var dalleVM = DalleViewModel()
+    @ObservedObject var dalleViewModel = DalleViewModel()
     @Namespace var bottomID
-
+    
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
-                ScrollViewReader { reader in
-                    ScrollView(.vertical) {
-                        if dalleVM.messages.count > 0{
-                            ForEach(dalleVM.messages.indices, id: \.self){ index in
-                                let message = dalleVM.messages[index]
+                if !dalleViewModel.messages.isEmpty{
+                    ScrollViewReader { reader in
+                        ScrollView(.vertical) {
+                            ForEach(dalleViewModel.messages.indices, id: \.self){ index in
+                                let message = dalleViewModel.messages[index]
                                 MessageView(message: message)
                             }
+                            Text("").id(bottomID)
                         }
-                        Text("").id(bottomID)
-                    }
-                    .onAppear{
-                        withAnimation{
-                            reader.scrollTo(bottomID)
+                        .onAppear{
+                            withAnimation{
+                                reader.scrollTo(bottomID)
+                            }
+                        }
+                        .onChange(of: dalleViewModel.messages.count){ _ in
+                            withAnimation{
+                                reader.scrollTo(bottomID)
+                            }
                         }
                     }
-                    .onChange(of: dalleVM.messages.count){ _ in
-                        withAnimation{
-                            reader.scrollTo(bottomID)
-                        }
+                } else {
+                    VStack {
+                        Image(systemName: "paintbrush")
+                            .font(.largeTitle)
+                        Text("Write your first message!")
+                            .font(.subheadline)
+                            .padding(10)
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                Spacer()
+                
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
-                        .padding(10)
-                        .font(.callout)
+                        .padding()
+                        .foregroundColor(.white)
                         .lineLimit(3)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                        .background(Capsule().stroke(Color.gray, lineWidth: 1))
                     
                     Button {
                         Task{
                             if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
                                 let tempMessage = typingMessage
                                 typingMessage = ""
-                                await dalleVM.generateImage(prompt: tempMessage)
+                                await dalleViewModel.generateImage(prompt: tempMessage)
                             }
                         }
                     } label: {
                         Image(systemName: typingMessage == "" ? "circle" : "paperplane.fill")
-                            .foregroundColor(.green)
-                            .rotationEffect(.degrees(45))
-                            .frame(width: 35, height: 35)
-                            .scaleEffect(typingMessage == "" ? 1.2 : 1.5)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(typingMessage == "" ? .white.opacity(0.75) : .white)
+                            .frame(width: 20, height: 20)
+                            .padding()
                     }
-
                 }
-                .padding()
+                .background(Color(red: 63/255, green: 66/255, blue: 78/255, opacity: 1))
+                .cornerRadius(12)
+                .padding([.leading, .trailing, .bottom], 10)
+                .shadow(color: .black, radius: 0.5)
             }
+            .background(Color(red: 53/255, green: 54/255, blue: 65/255, opacity: 1))
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle("DALL-E")
         }
