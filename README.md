@@ -1,4 +1,4 @@
-# SwiftUI - ChatGPT and Dalle 2 app
+# SwiftUI - ChatGPT and DALL·E 2 app
 SwiftUI app integrates with OpenAI's API and features a chat with GPT-3 and DALL-E
 
 
