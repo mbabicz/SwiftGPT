@@ -71,6 +71,9 @@ struct DalleView: View {
                             .padding()
                     }
                 }
+                .onDisappear {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+                }
                 .background(Color(red: 63/255, green: 66/255, blue: 78/255, opacity: 1))
                 .cornerRadius(12)
                 .padding([.leading, .trailing, .bottom], 10)

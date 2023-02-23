@@ -1,6 +1,6 @@
 //
 //  ChatBotView.swift
-//  ChattingAPP
+//  OpenAI GPT-DALL-E
 //
 //  Created by kz on 25/01/2023.
 //
@@ -67,6 +67,9 @@ struct ChatBotView: View {
                             .frame(width: 20, height: 20)
                             .padding()
                     }
+                }
+                .onDisappear {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
                 }
                 .background(Color(red: 63/255, green: 66/255, blue: 78/255, opacity: 1))
                 .cornerRadius(12)
