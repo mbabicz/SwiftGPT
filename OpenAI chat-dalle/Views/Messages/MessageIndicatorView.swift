@@ -15,10 +15,8 @@ struct MessageIndicatorView: View {
             DotView(delay: 0.4)
         }
         .padding(12)
-        //.foregroundColor(.black)
         .background(Color.gray.opacity(0.25))
         .cornerRadius(25)
-        //.padding(.leading)
     }
 }
 

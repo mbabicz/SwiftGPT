@@ -73,9 +73,7 @@ struct ChatBotView: View {
                 .padding([.leading, .trailing, .bottom], 10)
                 .shadow(color: .black, radius: 0.5)
             }
-            .background(Color(red: 53/255, green: 54/255, blue: 65/255, opacity: 1))
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarTitle("ChatBot")
+            .background(Color(red: 53/255, green: 54/255, blue: 65/255))
         }
     }
 }

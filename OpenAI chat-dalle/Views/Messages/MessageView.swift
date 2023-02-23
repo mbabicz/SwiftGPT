@@ -29,8 +29,7 @@ struct MessageView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .cornerRadius(13)
-                            .shadow(color: .green, radius: 4)
-                            //.padding()
+                            .shadow(color: .green, radius: 1)
                     case .indicator:
                         MessageIndicatorView()
                     }
@@ -40,7 +39,7 @@ struct MessageView: View {
             }
             Spacer()
         }
-        .background(message.isUserMessage ? Color(red: 53/255, green: 54/255, blue: 65/255, opacity: 1) : Color(red: 68/255, green: 70/255, blue: 83/255, opacity: 1))
+        .background(message.isUserMessage ? Color(red: 53/255, green: 54/255, blue: 65/255) : Color(red: 68/255, green: 70/255, blue: 83/255))
         .shadow( radius: message.isUserMessage ? 0 : 0.5)
     }
 }

@@ -6,19 +6,29 @@
 //
 
 import SwiftUI
+import SlidingTabView
 
 struct ContentView: View {
+    
+    @State private var selectedTabIndex = 0
+
     var body: some View {
-        NavigationView{
-            TabView{
-                ChatBotView().tabItem {
-                    Image(systemName: "message.fill")
-                }.tag(0)
-                
-                DalleView().tabItem {
-                    Image(systemName: "paintbrush.pointed.fill")
-                }.tag(1)
+        NavigationView {
+            VStack(alignment: .leading) {
+                SlidingTabView(selection: self.$selectedTabIndex, tabs: ["CHAT BOT", "DALL-E 2"], animation: .easeInOut, activeAccentColor: .white, inactiveAccentColor: .gray, selectionBarColor: .white)
+
+                if selectedTabIndex == 0 {
+                    ChatBotView()
+                }
+                else {
+                    DalleView()
+                }
+
+
+
+                Spacer()
             }
+            .background(Color(red: 53/255, green: 54/255, blue: 65/255))
         }
     }
 }

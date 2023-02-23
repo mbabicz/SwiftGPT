@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2919508729A557FF004C9189 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 2919508629A557FF004C9189 /* SlidingTabView */; };
 		29646507299F7E12005146FD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29646506299F7E12005146FD /* Message.swift */; };
 		2981BF12299256BB00D40C7A /* OpenAI_chat_dalleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF11299256BB00D40C7A /* OpenAI_chat_dalleApp.swift */; };
 		2981BF14299256BB00D40C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF13299256BB00D40C7A /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2919508729A557FF004C9189 /* SlidingTabView in Frameworks */,
 				2981BF24299257AB00D40C7A /* OpenAISwift in Frameworks */,
 				2981BF212992578800D40C7A /* OpenAIKit in Frameworks */,
 			);
@@ -146,6 +148,7 @@
 			packageProductDependencies = (
 				2981BF202992578800D40C7A /* OpenAIKit */,
 				2981BF23299257AB00D40C7A /* OpenAISwift */,
+				2919508629A557FF004C9189 /* SlidingTabView */,
 			);
 			productName = "OpenAI chat-dalle";
 			productReference = 2981BF0E299256BB00D40C7A /* OpenAI chat-dalle.app */;
@@ -178,6 +181,7 @@
 			packageReferences = (
 				2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */,
 				2981BF22299257AB00D40C7A /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				2919508529A557FF004C9189 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
 			);
 			productRefGroup = 2981BF0F299256BB00D40C7A /* Products */;
 			projectDirPath = "";
@@ -419,6 +423,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2919508529A557FF004C9189 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
@@ -438,6 +450,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2919508629A557FF004C9189 /* SlidingTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2919508529A557FF004C9189 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
+			productName = SlidingTabView;
+		};
 		2981BF202992578800D40C7A /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */;

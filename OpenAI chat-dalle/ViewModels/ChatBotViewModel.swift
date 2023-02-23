@@ -37,6 +37,7 @@ class ChatBotViewModel: ObservableObject {
                 self.removeLoadingIndicator()
                 self.addMessage(error.localizedDescription, type: .text, isUserMessage: false)
             }
+            
         }
     }
     
