@@ -52,6 +52,8 @@ class DalleViewModel: ObservableObject {
     }
 
     private func removeLoadingIndicator() {
-        self.messages.removeLast()
+        DispatchQueue.main.async {
+            self.messages.removeLast()
+        }
     }
 }
