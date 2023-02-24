@@ -8,7 +8,7 @@ The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/Open
 <img src = "https://user-images.githubusercontent.com/49866616/220469281-ba9f2387-689a-4b00-bb22-3e14b4ac8f6e.gif" width="300" height="600" />
 <img src = "https://user-images.githubusercontent.com/49866616/221298939-329f463f-0383-41ad-aea2-c3a4c536b181.gif" width="300" height="600" /> <br />
 
-### INSTALLATION
+## INSTALLATION
 * Install all required packages ([OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit), [OpenAISwift](https://github.com/adamrushy/OpenAISwift), [SlidingTabView](https://github.com/QuynhNguyen/SlidingTabView)) <br />
 * Enter your [api key](https://openai.com/api/) in these files: <br />
 `ChattingAPP/ViewModel/ChatBotViewModel.swift` <br />
