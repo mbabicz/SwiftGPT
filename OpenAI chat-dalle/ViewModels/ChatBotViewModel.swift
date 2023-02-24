@@ -14,9 +14,7 @@ class ChatBotViewModel: ObservableObject {
     @Published var messages = [Message]()
     
     init() {
-        let filePath = Bundle.main.path(forResource: "Api-keys", ofType: "plist")!
-        let plist = NSDictionary(contentsOfFile: filePath)!
-        apiKey = plist["API_KEY"] as! String
+        apiKey = "API_KEY"
         client = OpenAISwift(authToken: apiKey)
     }
     

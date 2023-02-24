@@ -15,13 +15,7 @@ class DalleViewModel: ObservableObject {
     @Published var messages = [Message]()
 
     init() {
-        guard let filePath = Bundle.main.path(forResource: "Api-keys", ofType: "plist"),
-              let plist = NSDictionary(contentsOfFile: filePath),
-              let value = plist["API_KEY"] as? String
-        else {
-            fatalError("Couldn't find api key in Api-keys.plist")
-        }
-        apiKey = value
+        apiKey = "API_KEY"
         openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
     
