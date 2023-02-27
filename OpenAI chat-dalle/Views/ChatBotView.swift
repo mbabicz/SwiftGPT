@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ChatBotView: View {
 
-    @ObservedObject var chatBotViewModel = ChatBotViewModel()
+    @ObservedObject var chatBotViewModel = OpenAIViewModel()
     @State var typingMessage: String = ""
     @Namespace var bottomID
 
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
-                if !chatBotViewModel.messages.isEmpty{
+                if !chatBotViewModel.gptMessages.isEmpty{
                     ScrollViewReader { reader in
                         ScrollView(.vertical) {
-                            ForEach(chatBotViewModel.messages.indices, id: \.self){ index in
-                                let message = chatBotViewModel.messages[index]
+                            ForEach(chatBotViewModel.gptMessages.indices, id: \.self){ index in
+                                let message = chatBotViewModel.gptMessages[index]
                                 MessageView(message: message)
                             }
                             Text("").id(bottomID)
@@ -30,7 +30,7 @@ struct ChatBotView: View {
                                 reader.scrollTo(bottomID)
                             }
                         }
-                        .onChange(of: chatBotViewModel.messages.count){ _ in
+                        .onChange(of: chatBotViewModel.gptMessages.count){ _ in
                             withAnimation{
                                 reader.scrollTo(bottomID)
                             }
@@ -56,7 +56,7 @@ struct ChatBotView: View {
                         .autocapitalization(.none)
                     Button {
                         if self.typingMessage != "" {
-                            chatBotViewModel.getResponse(text: self.typingMessage)
+                            chatBotViewModel.getGPTResponse(text: self.typingMessage)
                             self.typingMessage = ""
                         }
                     } label: {
