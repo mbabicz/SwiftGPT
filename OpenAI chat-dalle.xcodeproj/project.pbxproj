@@ -20,7 +20,6 @@
 		2981BF2D299258D200D40C7A /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2C299258D200D40C7A /* MessageView.swift */; };
 		2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
 		2981BF312992591400D40C7A /* ChatBotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF302992591400D40C7A /* ChatBotViewModel.swift */; };
-		2981BF3329925A9D00D40C7A /* Api-keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2981BF3229925A9D00D40C7A /* Api-keys.plist */; };
 		2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF342992964000D40C7A /* DalleViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		2981BF2C299258D200D40C7A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIndicatorView.swift; sourceTree = "<group>"; };
 		2981BF302992591400D40C7A /* ChatBotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewModel.swift; sourceTree = "<group>"; };
-		2981BF3229925A9D00D40C7A /* Api-keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Api-keys.plist"; sourceTree = "<group>"; };
 		2981BF342992964000D40C7A /* DalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +63,6 @@
 		2981BF05299256BB00D40C7A = {
 			isa = PBXGroup;
 			children = (
-				2981BF3229925A9D00D40C7A /* Api-keys.plist */,
 				2981BF10299256BB00D40C7A /* OpenAI chat-dalle */,
 				2981BF0F299256BB00D40C7A /* Products */,
 			);
@@ -199,7 +196,6 @@
 			files = (
 				2981BF19299256BE00D40C7A /* Preview Assets.xcassets in Resources */,
 				2981BF16299256BE00D40C7A /* Assets.xcassets in Resources */,
-				2981BF3329925A9D00D40C7A /* Api-keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
