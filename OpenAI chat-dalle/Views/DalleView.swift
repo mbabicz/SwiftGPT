@@ -9,17 +9,17 @@ import SwiftUI
 
 struct DalleView: View {
     @State var typingMessage: String = ""
-    @ObservedObject var dalleViewModel = OpenAIViewModel()//DalleViewModel()
+    @ObservedObject var dalleViewModel = DalleViewModel()
     @Namespace var bottomID
     
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
-                if !dalleViewModel.dalleMessages.isEmpty{
+                if !dalleViewModel.messages.isEmpty{
                     ScrollViewReader { reader in
                         ScrollView(.vertical) {
-                            ForEach(dalleViewModel.dalleMessages.indices, id: \.self){ index in
-                                let message = dalleViewModel.dalleMessages[index]
+                            ForEach(dalleViewModel.messages.indices, id: \.self){ index in
+                                let message = dalleViewModel.messages[index]
                                 MessageView(message: message)
                             }
                             Text("").id(bottomID)
@@ -29,7 +29,7 @@ struct DalleView: View {
                                 reader.scrollTo(bottomID)
                             }
                         }
-                        .onChange(of: dalleViewModel.dalleMessages.count){ _ in
+                        .onChange(of: dalleViewModel.messages.count){ _ in
                             withAnimation{
                                 reader.scrollTo(bottomID)
                             }
@@ -59,7 +59,7 @@ struct DalleView: View {
                             if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
                                 let tempMessage = typingMessage
                                 typingMessage = ""
-                                await dalleViewModel.generateDalleImage(prompt: tempMessage)
+                                await dalleViewModel.generateImage(prompt: tempMessage)
                             }
                         }
                     } label: {
