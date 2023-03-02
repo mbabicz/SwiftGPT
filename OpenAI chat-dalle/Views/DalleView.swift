@@ -11,6 +11,8 @@ struct DalleView: View {
     @State var typingMessage: String = ""
     @ObservedObject var dalleViewModel = DalleViewModel()
     @Namespace var bottomID
+    @FocusState private var fieldIsFocused: Bool
+
     
     var body: some View {
         NavigationView(){
@@ -48,6 +50,7 @@ struct DalleView: View {
                 
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
+                        .focused($fieldIsFocused)
                         .padding()
                         .foregroundColor(.white)
                         .lineLimit(3)
@@ -81,7 +84,11 @@ struct DalleView: View {
             }
             .background(Color(red: 53/255, green: 54/255, blue: 65/255))
         }
+        .onTapGesture {
+            fieldIsFocused = false
+        }
     }
+    
 }
 
 struct DalleView_Previews: PreviewProvider {
