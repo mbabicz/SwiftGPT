@@ -9,11 +9,10 @@ import SwiftUI
 
 struct ChatBotView: View {
 
-    @ObservedObject var chatBotViewModel = ChatBotViewModel()
+    @StateObject var chatBotViewModel = ChatBotViewModel()
     @State var typingMessage: String = ""
     @Namespace var bottomID
     @FocusState private var fieldIsFocused: Bool
-
 
     var body: some View {
         NavigationView(){

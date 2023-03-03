@@ -7,7 +7,6 @@
 
 import Foundation
 import OpenAIKit
-import UIKit
 
 class DalleViewModel: ObservableObject {
     private let apiKey: String
@@ -21,7 +20,7 @@ class DalleViewModel: ObservableObject {
     
     func generateImage(prompt: String) async {
         self.addMessage(prompt, type: .text, isUserMessage: true)
-        self.addMessage(prompt, type: .indicator, isUserMessage: false)
+        self.addMessage("", type: .indicator, isUserMessage: false)
         
         let imageParam = ImageParameters(prompt: prompt, resolution: .medium, responseFormat: .base64Json)
 
@@ -51,6 +50,10 @@ class DalleViewModel: ObservableObject {
             } else {
                 // otherwise, add new message to the end of the list
                 self.messages.append(message)
+            }
+            
+            if self.messages.count > 100 {
+                self.messages.removeFirst()
             }
         }
     }

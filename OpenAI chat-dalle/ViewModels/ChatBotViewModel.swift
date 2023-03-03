@@ -21,14 +21,17 @@ class ChatBotViewModel: ObservableObject {
     func getResponse(text: String) {
         
         self.addMessage(text, type: .text, isUserMessage: true)
-        self.addMessage(text, type: .indicator, isUserMessage: false)
+        self.addMessage("", type: .indicator, isUserMessage: false)
 
         client.sendCompletion(with: text, maxTokens: 500) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let model):
-                let output = model.choices.first?.text ?? ""
+                guard let output = model.choices.first?.text else {
+                    self.addMessage("Unexpected error", type: .text, isUserMessage: false)
+                    return
+                }
                 self.addMessage(output, type: .text, isUserMessage: false)
             case .failure(let error):
                 self.addMessage(error.localizedDescription, type: .text, isUserMessage: false)
@@ -51,6 +54,10 @@ class ChatBotViewModel: ObservableObject {
             } else {
                 // otherwise, add new message to the end of the list
                 self.messages.append(message)
+            }
+            
+            if self.messages.count > 100 {
+                self.messages.removeFirst()
             }
         }
     }

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct DalleView: View {
+    
     @State var typingMessage: String = ""
-    @ObservedObject var dalleViewModel = DalleViewModel()
+    @StateObject var dalleViewModel = DalleViewModel()
     @Namespace var bottomID
     @FocusState private var fieldIsFocused: Bool
 
-    
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
@@ -47,7 +47,7 @@ struct DalleView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                
+
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
                         .focused($fieldIsFocused)
@@ -56,7 +56,7 @@ struct DalleView: View {
                         .lineLimit(3)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                    
+
                     Button {
                         Task{
                             if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
@@ -88,7 +88,6 @@ struct DalleView: View {
             fieldIsFocused = false
         }
     }
-    
 }
 
 struct DalleView_Previews: PreviewProvider {

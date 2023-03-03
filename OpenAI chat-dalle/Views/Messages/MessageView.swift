@@ -25,11 +25,36 @@ struct MessageView: View {
                         Text(output)
                             .foregroundColor(.white)
                     case .image:
-                        Image(uiImage: message.content as! UIImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(13)
-                            .shadow(color: .green, radius: 1)
+                        HStack(alignment: .center) {
+                            Image(uiImage: message.content as! UIImage)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(13)
+                                .shadow(color: .green, radius: 1)
+                            Button(action: {
+                                guard let image = message.content as? UIImage else {
+                                    return
+                                }
+
+                                let avc = UIActivityViewController(activityItems: [image, UIImage()], applicationActivities: nil)
+
+                                avc.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
+                                    if completed && activityType == .saveToCameraRoll {
+                                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                                    }
+                                }
+
+                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                                   let window = windowScene.windows.first(where: { $0.isKeyWindow }),
+                                   let rootViewController = window.rootViewController {
+                                    rootViewController.present(avc, animated: true, completion: nil)
+                                }
+                            }) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                        }
                     case .indicator:
                         MessageIndicatorView()
                     }
@@ -43,4 +68,3 @@ struct MessageView: View {
         .shadow( radius: message.isUserMessage ? 0 : 0.5)
     }
 }
-
