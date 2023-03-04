@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ChatBotView: View {
-
+    
     @StateObject var chatBotViewModel = ChatBotViewModel()
     @State var typingMessage: String = ""
     @Namespace var bottomID
     @FocusState private var fieldIsFocused: Bool
-
+    
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
@@ -56,17 +56,14 @@ struct ChatBotView: View {
                         .lineLimit(3)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                    Button {
-                        if self.typingMessage != "" {
-                            chatBotViewModel.getResponse(text: self.typingMessage)
-                            self.typingMessage = ""
-                            fieldIsFocused = false
+                        .onTapGesture {
+                            fieldIsFocused = true
                         }
-                    } label: {
-                        Image(systemName: typingMessage == "" ? "circle" : "paperplane.fill")
+                    Button(action: sendMessage) {
+                        Image(systemName: typingMessage.isEmpty ? "circle" : "paperplane.fill")
                             .resizable()
                             .scaledToFit()
-                            .foregroundColor(typingMessage == "" ? .white.opacity(0.75) : .white)
+                            .foregroundColor(typingMessage.isEmpty ? .white.opacity(0.75) : .white)
                             .frame(width: 20, height: 20)
                             .padding()
                     }
@@ -80,10 +77,21 @@ struct ChatBotView: View {
                 .shadow(color: .black, radius: 0.5)
             }
             .background(Color(red: 53/255, green: 54/255, blue: 65/255))
+            .gesture(TapGesture().onEnded {
+                hideKeyboard()
+            })
         }
-        .onTapGesture {
-            fieldIsFocused = false
-        }
+    }
+    
+    private func sendMessage() {
+        guard !typingMessage.isEmpty else { return }
+        chatBotViewModel.getResponse(text: typingMessage)
+        typingMessage = ""
+        hideKeyboard()
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

@@ -14,6 +14,7 @@ class ChatBotViewModel: ObservableObject {
     @Published var messages = [Message]()
     
     init() {
+
         apiKey = "API_KEY"
         client = OpenAISwift(authToken: apiKey)
     }
@@ -41,7 +42,7 @@ class ChatBotViewModel: ObservableObject {
     
     private func addMessage(_ content: Any, type: MessageType, isUserMessage: Bool) {
         DispatchQueue.main.async {
-            // if messages list is empty just add new message
+            // if messages list is empty just addl new message
             guard let lastMessage = self.messages.last else {
                 let message = Message(content: content, type: type, isUserMessage: isUserMessage)
                 self.messages.append(message)

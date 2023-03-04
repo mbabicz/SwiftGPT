@@ -47,7 +47,7 @@ struct DalleView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-
+                
                 HStack(alignment: .center){
                     TextField("Message...", text: $typingMessage, axis: .vertical)
                         .focused($fieldIsFocused)
@@ -56,20 +56,14 @@ struct DalleView: View {
                         .lineLimit(3)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-
-                    Button {
-                        Task{
-                            if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
-                                let tempMessage = typingMessage
-                                typingMessage = ""
-                                await dalleViewModel.generateImage(prompt: tempMessage)
-                            }
+                        .onTapGesture {
+                            fieldIsFocused = true
                         }
-                    } label: {
-                        Image(systemName: typingMessage == "" ? "circle" : "paperplane.fill")
+                    Button(action: sendMessage) {
+                        Image(systemName: typingMessage.isEmpty ? "circle" : "paperplane.fill")
                             .resizable()
                             .scaledToFit()
-                            .foregroundColor(typingMessage == "" ? .white.opacity(0.75) : .white)
+                            .foregroundColor(typingMessage.isEmpty ? .white.opacity(0.75) : .white)
                             .frame(width: 20, height: 20)
                             .padding()
                     }
@@ -83,10 +77,26 @@ struct DalleView: View {
                 .shadow(color: .black, radius: 0.5)
             }
             .background(Color(red: 53/255, green: 54/255, blue: 65/255))
+            .gesture(TapGesture().onEnded {
+                hideKeyboard()
+            })
         }
-        .onTapGesture {
-            fieldIsFocused = false
+    }
+    
+    private func sendMessage() {
+        guard !typingMessage.isEmpty else { return }
+        Task{
+            if !typingMessage.trimmingCharacters(in: .whitespaces).isEmpty{
+                let tempMessage = typingMessage
+                typingMessage = ""
+                hideKeyboard()
+                await dalleViewModel.generateImage(prompt: tempMessage)
+            }
         }
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

@@ -20,7 +20,12 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 SlidingTabView(selection: self.$selectedTabIndex, tabs: ["CHAT BOT", "DALL-E 2"], animation: .easeInOut, activeAccentColor: .white, inactiveAccentColor: .gray, selectionBarColor: .white)
                 
-                selectedTabIndex == 0 ? AnyView(chatBotView) : AnyView(dalleView)
+                //selectedTabIndex == 0 ? AnyView(chatBotView) : AnyView(dalleView)
+                if selectedTabIndex == 0 {
+                    chatBotView
+                } else {
+                    dalleView
+                }
                 
                 Spacer()
             }
