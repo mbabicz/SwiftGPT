@@ -10,7 +10,7 @@ import SwiftUI
 struct DalleView: View {
     
     @State var typingMessage: String = ""
-    @StateObject var dalleViewModel = DalleViewModel()
+    @ObservedObject var dalleViewModel = DalleViewModel()
     @Namespace var bottomID
     @FocusState private var fieldIsFocused: Bool
 
@@ -100,8 +100,8 @@ struct DalleView: View {
     }
 }
 
-struct DalleView_Previews: PreviewProvider {
-    static var previews: some View {
-        DalleView()
-    }
-}
+//struct DalleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DalleView()
+//    }
+//}

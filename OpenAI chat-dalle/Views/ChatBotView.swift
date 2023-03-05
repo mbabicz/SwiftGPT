@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ChatBotView: View {
     
-    @StateObject var chatBotViewModel = ChatBotViewModel()
+    @ObservedObject var chatBotViewModel = ChatBotViewModel()
     @State var typingMessage: String = ""
     @Namespace var bottomID
     @FocusState private var fieldIsFocused: Bool
-    
+
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
@@ -95,8 +95,8 @@ struct ChatBotView: View {
     }
 }
 
-struct ChatGPTView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatBotView()
-    }
-}
+//struct ChatGPTView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatBotView()
+//    }
+//}
