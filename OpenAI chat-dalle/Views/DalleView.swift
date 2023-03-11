@@ -80,6 +80,8 @@ struct DalleView: View {
             .gesture(TapGesture().onEnded {
                 hideKeyboard()
             })
+            .navigationTitle("DALL·E 2")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     

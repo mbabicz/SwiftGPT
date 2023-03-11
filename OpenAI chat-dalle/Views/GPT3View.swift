@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ChatBotView: View {
+struct GPT3View: View {
     
-    @ObservedObject var chatBotViewModel = ChatBotViewModel()
+    @ObservedObject var gpt3ViewModel = GPT3ViewModel()
     @State var typingMessage: String = ""
     @Namespace var bottomID
     @FocusState private var fieldIsFocused: Bool
@@ -17,11 +17,11 @@ struct ChatBotView: View {
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
-                if !chatBotViewModel.messages.isEmpty{
+                if !gpt3ViewModel.messages.isEmpty{
                     ScrollViewReader { reader in
                         ScrollView(.vertical) {
-                            ForEach(chatBotViewModel.messages.indices, id: \.self){ index in
-                                let message = chatBotViewModel.messages[index]
+                            ForEach(gpt3ViewModel.messages.indices, id: \.self){ index in
+                                let message = gpt3ViewModel.messages[index]
                                 MessageView(message: message)
                             }
                             Text("").id(bottomID)
@@ -31,7 +31,7 @@ struct ChatBotView: View {
                                 reader.scrollTo(bottomID)
                             }
                         }
-                        .onChange(of: chatBotViewModel.messages.count){ _ in
+                        .onChange(of: gpt3ViewModel.messages.count){ _ in
                             withAnimation{
                                 reader.scrollTo(bottomID)
                             }
@@ -80,23 +80,22 @@ struct ChatBotView: View {
             .gesture(TapGesture().onEnded {
                 hideKeyboard()
             })
+            .navigationTitle("GPT 3.5 Turbo")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
     private func sendMessage() {
         guard !typingMessage.isEmpty else { return }
-        chatBotViewModel.getResponse(text: typingMessage)
+        let tempMessage = typingMessage
         typingMessage = ""
         hideKeyboard()
+        Task{
+            await gpt3ViewModel.getResponse(text: tempMessage)
+        }
     }
     
     private func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
-
-//struct ChatGPTView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChatBotView()
-//    }
-//}

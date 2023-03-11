@@ -16,7 +16,7 @@ enum MessageType {
 }
 
 struct Message {
-    let content: Any
+    var content: Any
     let type: MessageType
     let isUserMessage: Bool
 }

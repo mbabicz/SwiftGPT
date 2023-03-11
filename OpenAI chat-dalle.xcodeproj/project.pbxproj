@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2919508729A557FF004C9189 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 2919508629A557FF004C9189 /* SlidingTabView */; };
+		2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917754A29B4963800EEC302 /* GPT3ViewModel.swift */; };
+		2917754E29B606EC00EEC302 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2917754D29B606EC00EEC302 /* OpenAI */; };
+		2917755029B6083800EEC302 /* GPT3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917754F29B6083800EEC302 /* GPT3View.swift */; };
+		2917755329B60B2100EEC302 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2917755229B60B2100EEC302 /* ChatGPTSwift */; };
 		29646507299F7E12005146FD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29646506299F7E12005146FD /* Message.swift */; };
 		2981BF12299256BB00D40C7A /* OpenAI_chat_dalleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF11299256BB00D40C7A /* OpenAI_chat_dalleApp.swift */; };
 		2981BF14299256BB00D40C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF13299256BB00D40C7A /* ContentView.swift */; };
 		2981BF16299256BE00D40C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2981BF15299256BE00D40C7A /* Assets.xcassets */; };
 		2981BF19299256BE00D40C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2981BF18299256BE00D40C7A /* Preview Assets.xcassets */; };
 		2981BF212992578800D40C7A /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2981BF202992578800D40C7A /* OpenAIKit */; };
-		2981BF24299257AB00D40C7A /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2981BF23299257AB00D40C7A /* OpenAISwift */; };
-		2981BF292992588600D40C7A /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF282992588600D40C7A /* ChatBotView.swift */; };
 		2981BF2B2992589300D40C7A /* DalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2A2992589300D40C7A /* DalleView.swift */; };
 		2981BF2D299258D200D40C7A /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2C299258D200D40C7A /* MessageView.swift */; };
 		2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
-		2981BF312992591400D40C7A /* ChatBotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF302992591400D40C7A /* ChatBotViewModel.swift */; };
 		2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF342992964000D40C7A /* DalleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2917754A29B4963800EEC302 /* GPT3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT3ViewModel.swift; sourceTree = "<group>"; };
+		2917754F29B6083800EEC302 /* GPT3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT3View.swift; sourceTree = "<group>"; };
 		29646506299F7E12005146FD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2981BF0E299256BB00D40C7A /* OpenAI chat-dalle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenAI chat-dalle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981BF11299256BB00D40C7A /* OpenAI_chat_dalleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI_chat_dalleApp.swift; sourceTree = "<group>"; };
 		2981BF13299256BB00D40C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2981BF15299256BE00D40C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2981BF18299256BE00D40C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2981BF282992588600D40C7A /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
 		2981BF2A2992589300D40C7A /* DalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleView.swift; sourceTree = "<group>"; };
 		2981BF2C299258D200D40C7A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIndicatorView.swift; sourceTree = "<group>"; };
-		2981BF302992591400D40C7A /* ChatBotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewModel.swift; sourceTree = "<group>"; };
 		2981BF342992964000D40C7A /* DalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,8 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2919508729A557FF004C9189 /* SlidingTabView in Frameworks */,
-				2981BF24299257AB00D40C7A /* OpenAISwift in Frameworks */,
+				2917754E29B606EC00EEC302 /* OpenAI in Frameworks */,
+				2917755329B60B2100EEC302 /* ChatGPTSwift in Frameworks */,
 				2981BF212992578800D40C7A /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				2981BF272992584B00D40C7A /* Messages */,
-				2981BF282992588600D40C7A /* ChatBotView.swift */,
 				2981BF2A2992589300D40C7A /* DalleView.swift */,
+				2917754F29B6083800EEC302 /* GPT3View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,8 +111,8 @@
 		2981BF262992583C00D40C7A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2981BF302992591400D40C7A /* ChatBotViewModel.swift */,
 				2981BF342992964000D40C7A /* DalleViewModel.swift */,
+				2917754A29B4963800EEC302 /* GPT3ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -144,8 +144,8 @@
 			name = "OpenAI chat-dalle";
 			packageProductDependencies = (
 				2981BF202992578800D40C7A /* OpenAIKit */,
-				2981BF23299257AB00D40C7A /* OpenAISwift */,
-				2919508629A557FF004C9189 /* SlidingTabView */,
+				2917754D29B606EC00EEC302 /* OpenAI */,
+				2917755229B60B2100EEC302 /* ChatGPTSwift */,
 			);
 			productName = "OpenAI chat-dalle";
 			productReference = 2981BF0E299256BB00D40C7A /* OpenAI chat-dalle.app */;
@@ -177,8 +177,8 @@
 			mainGroup = 2981BF05299256BB00D40C7A;
 			packageReferences = (
 				2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */,
-				2981BF22299257AB00D40C7A /* XCRemoteSwiftPackageReference "OpenAISwift" */,
-				2919508529A557FF004C9189 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+				2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */,
+				2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 			);
 			productRefGroup = 2981BF0F299256BB00D40C7A /* Products */;
 			projectDirPath = "";
@@ -207,11 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */,
-				2981BF292992588600D40C7A /* ChatBotView.swift in Sources */,
-				2981BF312992591400D40C7A /* ChatBotViewModel.swift in Sources */,
+				2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */,
 				29646507299F7E12005146FD /* Message.swift in Sources */,
 				2981BF14299256BB00D40C7A /* ContentView.swift in Sources */,
 				2981BF12299256BB00D40C7A /* OpenAI_chat_dalleApp.swift in Sources */,
+				2917755029B6083800EEC302 /* GPT3View.swift in Sources */,
 				2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */,
 				2981BF2B2992589300D40C7A /* DalleView.swift in Sources */,
 				2981BF2D299258D200D40C7A /* MessageView.swift in Sources */,
@@ -421,9 +421,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2919508529A557FF004C9189 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+		2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView";
+			repositoryURL = "https://github.com/colealanroberts/openai";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -437,31 +445,23 @@
 				kind = branch;
 			};
 		};
-		2981BF22299257AB00D40C7A /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2919508629A557FF004C9189 /* SlidingTabView */ = {
+		2917754D29B606EC00EEC302 /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2919508529A557FF004C9189 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
-			productName = SlidingTabView;
+			package = 2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */;
+			productName = OpenAI;
+		};
+		2917755229B60B2100EEC302 /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
 		};
 		2981BF202992578800D40C7A /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */;
 			productName = OpenAIKit;
-		};
-		2981BF23299257AB00D40C7A /* OpenAISwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2981BF22299257AB00D40C7A /* XCRemoteSwiftPackageReference "OpenAISwift" */;
-			productName = OpenAISwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

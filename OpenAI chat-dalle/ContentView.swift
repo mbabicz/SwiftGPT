@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView {
-                ChatBotView().tabItem{
+                GPT3View().tabItem{
                     Label("CHAT BOT", systemImage: "ellipses.bubble")
                 }
                 DalleView().tabItem{

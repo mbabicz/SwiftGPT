@@ -24,6 +24,7 @@ struct MessageView: View {
                         let output = (message.content as! String).trimmingCharacters(in: .whitespacesAndNewlines)
                         Text(output)
                             .foregroundColor(.white)
+                            .textSelection(.enabled)
                     case .image:
                         HStack(alignment: .center) {
                             Image(uiImage: message.content as! UIImage)
