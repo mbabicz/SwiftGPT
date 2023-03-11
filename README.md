@@ -1,15 +1,15 @@
 # SwiftUI - ChatGPT and DALL·E 2 app
-SwiftUI app integrates with OpenAI's API and features a chat with GPT-3 and DALL-E
+SwiftUI app integrates with OpenAI's API and features a chat with GPT-3.5 Turbo and DALL-E
 
 
 ## ABOUT THE PROJECT
-SwiftUI MVVM application that contains OpenAI GPT-3 chat bot and OpenAI DALL·E 2 system. OpenAI client providing GPT3 is implemented with [this library](https://github.com/adamrushy/OpenAISwift). 
+SwiftUI MVVM application that contains OpenAI GPT-3 chat bot and OpenAI DALL·E 2 system. OpenAI client providing GPT3 is implemented with [this library](https://github.com/alfianlosari/ChatGPTSwift). 
 The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit). To use OpenAI you need to get your api [here](https://openai.com/api/).  <br /> <br />
 |<img src = "https://user-images.githubusercontent.com/49866616/220469281-ba9f2387-689a-4b00-bb22-3e14b4ac8f6e.gif" width="300" height="600" />|<img src = "https://user-images.githubusercontent.com/49866616/221298939-329f463f-0383-41ad-aea2-c3a4c536b181.gif" width="300" height="600" />|
 |:-:|:-:|
 
 ## INSTALLATION
-* Install all required packages ([OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit), [OpenAISwift](https://github.com/adamrushy/OpenAISwift), [SlidingTabView](https://github.com/QuynhNguyen/SlidingTabView)) <br />
+* Install all required packages ([OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit), [ChatGPTSwift](https://github.com/alfianlosari/ChatGPTSwift)) <br />
 * Enter your [api key](https://openai.com/api/) in these files: <br />
 `ChattingAPP/ViewModel/ChatBotViewModel.swift` <br />
 `ChattingAPP/ViewModel/DalleViewModel.swift` <br />
