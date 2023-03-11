@@ -101,9 +101,3 @@ struct DalleView: View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
-
-//struct DalleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DalleView()
-//    }
-//}

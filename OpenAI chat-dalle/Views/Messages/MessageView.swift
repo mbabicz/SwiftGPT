@@ -18,13 +18,14 @@ struct MessageView: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                         .padding(.trailing, 10)
-                    
+
                     switch message.type {
                     case .text:
                         let output = (message.content as! String).trimmingCharacters(in: .whitespacesAndNewlines)
                         Text(output)
                             .foregroundColor(.white)
                             .textSelection(.enabled)
+
                     case .image:
                         HStack(alignment: .center) {
                             Image(uiImage: message.content as! UIImage)
@@ -32,14 +33,14 @@ struct MessageView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(13)
                                 .shadow(color: .green, radius: 1)
-                            
+
                             Button(action: {
                                 guard let image = message.content as? UIImage else {
                                     return
                                 }
-                                
+
                                 let avc = UIActivityViewController(activityItems: [image, UIImage()], applicationActivities: nil)
-                                
+
                                 avc.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
                                     if completed && activityType == .saveToCameraRoll {
                                         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -67,6 +68,6 @@ struct MessageView: View {
         }
         .background(message.isUserMessage ? Color(red: 53/255, green: 54/255, blue: 65/255) : Color(red: 68/255, green: 70/255, blue: 83/255))
         .shadow( radius: message.isUserMessage ? 0 : 0.5)
-        
+
     }
 }

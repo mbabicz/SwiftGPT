@@ -36,6 +36,7 @@
 		2981BF2C299258D200D40C7A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIndicatorView.swift; sourceTree = "<group>"; };
 		2981BF342992964000D40C7A /* DalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleViewModel.swift; sourceTree = "<group>"; };
+		29B4E5C129BCDBD5008A02E9 /* OpenAI-chat-dalle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "OpenAI-chat-dalle-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		2981BF10299256BB00D40C7A /* OpenAI chat-dalle */ = {
 			isa = PBXGroup;
 			children = (
+				29B4E5C129BCDBD5008A02E9 /* OpenAI-chat-dalle-Info.plist */,
 				29646505299F7E02005146FD /* Models */,
 				2981BF262992583C00D40C7A /* ViewModels */,
 				2981BF252992581600D40C7A /* Views */,
@@ -346,6 +348,7 @@
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "OpenAI-chat-dalle-Info.plist";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = .;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -377,6 +380,7 @@
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "OpenAI-chat-dalle-Info.plist";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = .;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
