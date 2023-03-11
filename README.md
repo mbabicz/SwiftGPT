@@ -12,7 +12,7 @@ The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/Open
 * Install all required packages ([OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit), [ChatGPTSwift](https://github.com/alfianlosari/ChatGPTSwift)) <br />
 * Enter your [api key](https://openai.com/api/) in these files: <br />
 `ChattingAPP/ViewModel/ChatBotViewModel.swift` <br />
-`ChattingAPP/ViewModel/DalleViewModel.swift` <br />
+`ChattingAPP/ViewModel/GPT3ViewModel.swift` <br />
 in this line:
 ```swift
 apiKey = "API_KEY"
