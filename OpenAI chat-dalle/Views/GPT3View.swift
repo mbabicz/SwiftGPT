@@ -20,19 +20,27 @@ struct GPT3View: View {
                 if !gpt3ViewModel.messages.isEmpty{
                     ScrollViewReader { reader in
                         ScrollView(.vertical) {
-                            ForEach(gpt3ViewModel.messages.indices, id: \.self){ index in
-                                let message = gpt3ViewModel.messages[index]
+                            ForEach(gpt3ViewModel.messages) { message in
                                 MessageView(message: message)
                             }
                             Text("").id(bottomID)
                         }
-                        .onAppear{
-                            withAnimation{
+                        
+                        .onChange(of: gpt3ViewModel.messages.last?.content as? String) { _ in
+                            DispatchQueue.main.async {
+                                withAnimation {
+                                    reader.scrollTo(bottomID)
+                                }
+                            }
+                        }
+                        .onChange(of: gpt3ViewModel.messages.count) { _ in
+                            withAnimation {
                                 reader.scrollTo(bottomID)
                             }
                         }
-                        .onChange(of: gpt3ViewModel.messages.count){ _ in
-                            withAnimation{
+                        
+                        .onAppear {
+                            withAnimation {
                                 reader.scrollTo(bottomID)
                             }
                         }
@@ -98,4 +106,5 @@ struct GPT3View: View {
     private func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
+
 }

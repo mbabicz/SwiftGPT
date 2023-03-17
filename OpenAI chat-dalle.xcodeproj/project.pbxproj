@@ -21,6 +21,7 @@
 		2981BF2D299258D200D40C7A /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2C299258D200D40C7A /* MessageView.swift */; };
 		2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
 		2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF342992964000D40C7A /* DalleViewModel.swift */; };
+		29CCEE1C29C4A16500452C0D /* OpenAI-chat-dalle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29CCEE1B29C4A16500452C0D /* OpenAI-chat-dalle-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,7 @@
 		2981BF2C299258D200D40C7A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIndicatorView.swift; sourceTree = "<group>"; };
 		2981BF342992964000D40C7A /* DalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleViewModel.swift; sourceTree = "<group>"; };
-		29B4E5C129BCDBD5008A02E9 /* OpenAI-chat-dalle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "OpenAI-chat-dalle-Info.plist"; sourceTree = SOURCE_ROOT; };
+		29CCEE1B29C4A16500452C0D /* OpenAI-chat-dalle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OpenAI-chat-dalle-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		2981BF05299256BB00D40C7A = {
 			isa = PBXGroup;
 			children = (
+				29CCEE1B29C4A16500452C0D /* OpenAI-chat-dalle-Info.plist */,
 				2981BF10299256BB00D40C7A /* OpenAI chat-dalle */,
 				2981BF0F299256BB00D40C7A /* Products */,
 			);
@@ -80,7 +82,6 @@
 		2981BF10299256BB00D40C7A /* OpenAI chat-dalle */ = {
 			isa = PBXGroup;
 			children = (
-				29B4E5C129BCDBD5008A02E9 /* OpenAI-chat-dalle-Info.plist */,
 				29646505299F7E02005146FD /* Models */,
 				2981BF262992583C00D40C7A /* ViewModels */,
 				2981BF252992581600D40C7A /* Views */,
@@ -196,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CCEE1C29C4A16500452C0D /* OpenAI-chat-dalle-Info.plist in Resources */,
 				2981BF19299256BE00D40C7A /* Preview Assets.xcassets in Resources */,
 				2981BF16299256BE00D40C7A /* Assets.xcassets in Resources */,
 			);

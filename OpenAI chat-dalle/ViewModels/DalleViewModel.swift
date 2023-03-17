@@ -14,7 +14,7 @@ class DalleViewModel: ObservableObject {
     @Published var messages = [Message]()
     
     init() {
-        apiKey = "API_KEY"
+        apiKey = "API-KEY"
         openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
     
@@ -31,7 +31,7 @@ class DalleViewModel: ObservableObject {
             self.addMessage(output, type: .image, isUserMessage: false)
         } catch {
             print(error)
-            self.addMessage(error.localizedDescription, type: .text, isUserMessage: false)
+            self.addMessage(error.localizedDescription, type: .error, isUserMessage: false)
         }
     }
     
