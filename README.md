@@ -5,7 +5,7 @@ SwiftUI app integrates with OpenAI's API and features a chat with GPT-3.5 Turbo 
 ## ABOUT THE PROJECT
 SwiftUI MVVM application that contains OpenAI GPT-3 chat bot and OpenAI DALL·E 2 system. OpenAI client providing GPT3 is implemented with [this library](https://github.com/alfianlosari/ChatGPTSwift). 
 The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit). To use OpenAI you need to get your api [here](https://openai.com/api/).  <br /> <br />
-|<img src = "https://user-images.githubusercontent.com/49866616/220469281-ba9f2387-689a-4b00-bb22-3e14b4ac8f6e.gif" width="300" height="600" />|<img src = "https://user-images.githubusercontent.com/49866616/221298939-329f463f-0383-41ad-aea2-c3a4c536b181.gif" width="300" height="600" />|
+|<img src = "https://user-images.githubusercontent.com/49866616/229373384-c84099f2-0b7b-4b83-b25e-5e6689529951.gif" width="300" height="600" />|<img src = "https://user-images.githubusercontent.com/49866616/221298939-329f463f-0383-41ad-aea2-c3a4c536b181.gif" width="300" height="600" />|
 |:-:|:-:|
 
 ## INSTALLATION
