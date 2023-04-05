@@ -1,6 +1,14 @@
 # SwiftUI - ChatGPT and DALL·E 2 app
 SwiftUI app integrates with OpenAI's API and features a chat with GPT-3.5 Turbo and DALL-E
 
+[![mbabicz](https://img.shields.io/static/v1?label=mbabicz&message=SwiftUI-ChatGPT-DALL-E-2&color=red&logo=github)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2) <br />
+[![stars](https://img.shields.io/github/stars/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+[![forks](https://img.shields.io/github/forks/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2T)
+![iOS](https://img.shields.io/badge/iOS%20-15+-blue)
+![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
+![Swift](https://img.shields.io/static/v1?style=flat&message=SwiftUI&color=blue&logo=Swift&logoColor=FFFFFF&label=)
+
+
 
 ## ABOUT THE PROJECT
 SwiftUI MVVM application that contains OpenAI GPT-3 chat bot and OpenAI DALL·E 2 system. OpenAI client providing GPT3 is implemented with [this library](https://github.com/alfianlosari/ChatGPTSwift). 
