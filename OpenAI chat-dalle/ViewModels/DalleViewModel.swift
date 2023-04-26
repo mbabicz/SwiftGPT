@@ -14,7 +14,7 @@ class DalleViewModel: ObservableObject {
     @Published var messages = [Message]()
     
     init() {
-        apiKey = "API-KEY"
+        apiKey = "API_KEY"
         openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
     

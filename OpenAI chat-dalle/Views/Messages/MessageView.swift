@@ -38,29 +38,45 @@ struct MessageView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(13)
                                 .shadow(color: .green, radius: 1)
-
-                            Button(action: {
-                                guard let image = message.content as? UIImage else {
-                                    return
-                                }
-
-                                let avc = UIActivityViewController(activityItems: [image, UIImage()], applicationActivities: nil)
-
-                                avc.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
-                                    if completed && activityType == .saveToCameraRoll {
-                                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                            VStack{
+                                Button(action: {
+                                    guard let image = message.content as? UIImage else {
+                                        return
                                     }
+                                    
+                                    let avc = UIActivityViewController(activityItems: [image, UIImage()], applicationActivities: nil)
+                                    
+                                    avc.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
+                                        if completed && activityType == .saveToCameraRoll {
+                                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                                        }
+                                    }
+                                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                                       let window = windowScene.windows.first(where: { $0.isKeyWindow }),
+                                       let rootViewController = window.rootViewController {
+                                        rootViewController.present(avc, animated: true, completion: nil)
+                                    }
+                                }) {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .foregroundColor(.white)
                                 }
-                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                                   let window = windowScene.windows.first(where: { $0.isKeyWindow }),
-                                   let rootViewController = window.rootViewController {
-                                    rootViewController.present(avc, animated: true, completion: nil)
+                                .padding()
+                                
+                                Button(action: {
+                                    guard let image = message.content as? UIImage else {
+                                        return
+                                    }
+                                    
+                                    let imageSaver = ImageSaver()
+                                    imageSaver.writeToPhotoAlbum(image: image)
+
+                                }) {
+                                    Image(systemName: "square.and.arrow.down")
+                                        .foregroundColor(.white)
                                 }
-                            }) {
-                                Image(systemName: "square.and.arrow.up")
-                                    .foregroundColor(.white)
+                                .padding()
+                                
                             }
-                            .padding()
                         }
                     case .indicator:
                         MessageIndicatorView()

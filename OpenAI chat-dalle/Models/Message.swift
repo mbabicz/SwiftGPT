@@ -26,3 +26,4 @@ struct Message: Identifiable, Equatable {
         return lhs.id == rhs.id && lhs.content as AnyObject === rhs.content as AnyObject && lhs.type == rhs.type && lhs.isUserMessage == rhs.isUserMessage
     }
 }
+    

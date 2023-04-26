@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2905CCC629F919D700D4F968 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCC529F919D700D4F968 /* ImageSaver.swift */; };
 		2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917754A29B4963800EEC302 /* GPT3ViewModel.swift */; };
 		2917754E29B606EC00EEC302 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2917754D29B606EC00EEC302 /* OpenAI */; };
 		2917755029B6083800EEC302 /* GPT3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917754F29B6083800EEC302 /* GPT3View.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2905CCC529F919D700D4F968 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		2917754A29B4963800EEC302 /* GPT3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT3ViewModel.swift; sourceTree = "<group>"; };
 		2917754F29B6083800EEC302 /* GPT3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT3View.swift; sourceTree = "<group>"; };
 		29646506299F7E12005146FD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2905CCC429F919C400D4F968 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2905CCC529F919D700D4F968 /* ImageSaver.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		29646505299F7E02005146FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		2981BF10299256BB00D40C7A /* OpenAI chat-dalle */ = {
 			isa = PBXGroup;
 			children = (
+				2905CCC429F919C400D4F968 /* Extensions */,
 				29646505299F7E02005146FD /* Models */,
 				2981BF262992583C00D40C7A /* ViewModels */,
 				2981BF252992581600D40C7A /* Views */,
@@ -217,6 +228,7 @@
 				2981BF12299256BB00D40C7A /* OpenAI_chat_dalleApp.swift in Sources */,
 				2917755029B6083800EEC302 /* GPT3View.swift in Sources */,
 				2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */,
+				2905CCC629F919D700D4F968 /* ImageSaver.swift in Sources */,
 				2981BF2B2992589300D40C7A /* DalleView.swift in Sources */,
 				2981BF2D299258D200D40C7A /* MessageView.swift in Sources */,
 			);
@@ -347,7 +359,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OpenAI chat-dalle/Preview Content\"";
-				DEVELOPMENT_TEAM = TU72F4GFFV;
+				DEVELOPMENT_TEAM = BD2C3339T9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OpenAI-chat-dalle-Info.plist";
@@ -363,7 +375,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mbabicz.OpenAI-chat-dalle2";
+				PRODUCT_BUNDLE_IDENTIFIER = "mbabicz.OpenAI-chat-dalle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,7 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OpenAI chat-dalle/Preview Content\"";
-				DEVELOPMENT_TEAM = TU72F4GFFV;
+				DEVELOPMENT_TEAM = BD2C3339T9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OpenAI-chat-dalle-Info.plist";
@@ -395,7 +407,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mbabicz.OpenAI-chat-dalle2";
+				PRODUCT_BUNDLE_IDENTIFIER = "mbabicz.OpenAI-chat-dalle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
