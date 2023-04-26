@@ -1,11 +1,19 @@
 # SwiftUI - ChatGPT and DALL·E 2 app
 SwiftUI app integrates with OpenAI's API and features a chat with GPT-3.5 Turbo and DALL-E
 
+[![mbabicz](https://img.shields.io/static/v1?label=mbabicz&message=SwiftUI-ChatGPT-DALL-E-2&color=red&logo=github)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2) <br />
+[![stars](https://img.shields.io/github/stars/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+[![forks](https://img.shields.io/github/forks/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+[![iOS](https://img.shields.io/badge/iOS%20-15+-blue)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+[![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+[![Swift](https://img.shields.io/static/v1?style=flat&message=SwiftUI&color=blue&logo=Swift&logoColor=FFFFFF&label=)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+
+
 
 ## ABOUT THE PROJECT
 SwiftUI MVVM application that contains OpenAI GPT-3 chat bot and OpenAI DALL·E 2 system. OpenAI client providing GPT3 is implemented with [this library](https://github.com/alfianlosari/ChatGPTSwift). 
-The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit). To use OpenAI you need to get your api [here](https://openai.com/api/).  <br /> <br />
-|<img src = "https://user-images.githubusercontent.com/49866616/220469281-ba9f2387-689a-4b00-bb22-3e14b4ac8f6e.gif" width="300" height="600" />|<img src = "https://user-images.githubusercontent.com/49866616/221298939-329f463f-0383-41ad-aea2-c3a4c536b181.gif" width="300" height="600" />|
+The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit). To use OpenAI you will need to obtain your API from the [OpenAI website](https://openai.com/api/).  <br /> <br />
+|<img src = "https://user-images.githubusercontent.com/49866616/229373384-c84099f2-0b7b-4b83-b25e-5e6689529951.gif" width="300" height="600" />|<img src = "https://user-images.githubusercontent.com/49866616/221298939-329f463f-0383-41ad-aea2-c3a4c536b181.gif" width="300" height="600" />|
 |:-:|:-:|
 
 ## INSTALLATION
