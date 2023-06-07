@@ -1,6 +1,6 @@
 # SwiftUI - ChatGPT and DALL·E 2 iOS 
 
-[![mbabicz](https://img.shields.io/static/v1?label=mbabicz&message=SwiftUI-ChatGPT-DALL-E-2&color=red&logo=github)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2) <br />
+[![mbabicz](https://img.shields.io/static/v1?label=mbabicz&message=SwiftUI-ChatGPT-DALL-E-2&color=green&logo=github)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2) <br />
 [![stars](https://img.shields.io/github/stars/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
 [![forks](https://img.shields.io/github/forks/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
 [![iOS](https://img.shields.io/badge/iOS%20-15+-blue)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
