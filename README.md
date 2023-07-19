@@ -3,7 +3,7 @@
 [![mbabicz](https://img.shields.io/static/v1?label=mbabicz&message=SwiftUI-ChatGPT-DALL-E-2&color=green&logo=github)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2) <br />
 [![stars](https://img.shields.io/github/stars/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
 [![forks](https://img.shields.io/github/forks/mbabicz/SwiftUI-ChatGPT-DALL-E-2?style=social)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
-[![iOS](https://img.shields.io/badge/iOS%20-15+-blue)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
+[![iOS](https://img.shields.io/badge/iOS%20-14+-blue)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
 [![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
 [![Swift](https://img.shields.io/static/v1?style=flat&message=SwiftUI&color=blue&logo=Swift&logoColor=FFFFFF&label=)](https://github.com/mbabicz/SwiftUI-ChatGPT-DALL-E-2)
 
@@ -19,7 +19,7 @@ The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/Open
 * Enter your [api key](https://openai.com/api/) in these files: <br />
 `OpenAI chat-dalle/ViewModels/DalleViewModel.swift` <br />
 `OpenAI chat-dalle/ViewModels/GPT3ViewModel.swift` <br />
-in this line:
+here:
 ```swift
 apiKey = "API_KEY"
 ```
