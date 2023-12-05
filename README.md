@@ -34,5 +34,4 @@ apiKey = "API_KEY"
 ## BUILT WITH
 <img src = "https://user-images.githubusercontent.com/49866616/213214287-6849916c-ddb3-48ad-bdde-2013f3315b93.png" width="55" height="55" /> <br />
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white) <br />
-![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white) <br />
 
