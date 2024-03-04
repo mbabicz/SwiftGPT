@@ -34,18 +34,18 @@ class GPT3ViewModel: ObservableObject {
     
     private func addMessage(_ content: Any, type: MessageType, isUserMessage: Bool) {
         DispatchQueue.main.async {
-            // if messages list is empty just addl new message
+            /// if messages list is empty just add new message
             guard let lastMessage = self.messages.last else {
                 let message = Message(content: content, type: type, isUserMessage: isUserMessage)
                 self.messages.append(message)
                 return
             }
             let message = Message(content: content, type: type, isUserMessage: isUserMessage)
-            // if last message is an indicator switch with new one
+            /// if last message is an indicator switch with new one
             if lastMessage.type == .indicator && !lastMessage.isUserMessage {
                 self.messages[self.messages.count - 1] = message
             } else {
-                // otherwise, add new message to the end of the list
+                /// otherwise, add new message to the end of the list
                 self.messages.append(message)
             }
             
