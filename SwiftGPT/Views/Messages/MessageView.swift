@@ -1,8 +1,8 @@
 //
 //  MessageView.swift
-//  ChattingAPP
+//  SwiftGPT
 //
-//  Created by kz on 02/02/2023.
+//  Created by mbabicz on 02/02/2023.
 //
 
 import SwiftUI

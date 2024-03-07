@@ -1,8 +1,8 @@
 //
 //  Message.swift
-//  OpenAI chat-dalle
+//  SwiftGPT
 //
-//  Created by kz on 17/02/2023.
+//  Created by mbabicz on 17/02/2023.
 //
 
 import Foundation

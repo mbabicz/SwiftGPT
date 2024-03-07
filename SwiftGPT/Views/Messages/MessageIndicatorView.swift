@@ -1,8 +1,8 @@
 //
 //  MessageIndicatorView.swift
-//  OpenAI GPT-DALL-E
+//  SwiftGPT
 //
-//  Created by kz on 06/02/2023.
+//  Created by mbabicz on 06/02/2023.
 //
 
 import SwiftUI

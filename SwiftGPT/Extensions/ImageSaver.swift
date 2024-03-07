@@ -1,13 +1,12 @@
 //
 //  ImageSaver.swift
-//  OpenAI chat-dalle
+//  SwiftGPT
 //
-//  Created by kz on 26/04/2023.
+//  Created by mbabicz on 26/04/2023.
 //
 
 import Foundation
 import UIKit
-
 
 class ImageSaver: NSObject {
     
