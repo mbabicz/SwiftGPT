@@ -10,27 +10,21 @@ import ChatGPTSwift
 
 class GPTViewModel: ObservableObject {
 
-    let api = ChatGPTAPI(apiKey: API.apiKey)
-    @Published var messages = [Message]()
+    private let api: ChatGPTAPI
+    @Published var messages: [Message] = []
     @Published var typingMessage: String = ""
     let bottomID = UUID()
 
-    func getResponse(text: String) async{
-        
-        self.addMessage(text, type: .text, isUserMessage: true)
-        self.addMessage("", type: .text, isUserMessage: false)
-
-        do {
-            let stream = try await api.sendMessageStream(text: text)
-
-            for try await line in stream {
-                DispatchQueue.main.async {
-                    
-                    self.messages[self.messages.count - 1].content = self.messages[self.messages.count - 1].content as! String + line
-                }
-            }
-        } catch {
-            self.addMessage(error.localizedDescription, type: .error, isUserMessage: false)
+    init(apiKey: String = API.apiKey) {
+        self.api = ChatGPTAPI(apiKey: apiKey)
+    }
+    
+    func sendMessage() {
+        guard !typingMessage.isEmpty else { return }
+        let tempMessage = typingMessage
+        typingMessage = ""
+        Task{
+            await getResponse(text: tempMessage)
         }
     }
     
@@ -57,13 +51,22 @@ class GPTViewModel: ObservableObject {
         }
     }
     
-    func sendMessage() {
-        guard !typingMessage.isEmpty else { return }
-        let tempMessage = typingMessage
-        typingMessage = ""
-        Task{
-            await getResponse(text: tempMessage)
+    func getResponse(text: String) async{
+        
+        self.addMessage(text, type: .text, isUserMessage: true)
+        self.addMessage("", type: .text, isUserMessage: false)
+
+        do {
+            let stream = try await api.sendMessageStream(text: text)
+
+            for try await line in stream {
+                DispatchQueue.main.async {
+                    
+                    self.messages[self.messages.count - 1].content = self.messages[self.messages.count - 1].content as! String + line
+                }
+            }
+        } catch {
+            self.addMessage(error.localizedDescription, type: .error, isUserMessage: false)
         }
     }
-    
 }

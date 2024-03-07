@@ -20,6 +20,17 @@ class DalleViewModel: ObservableObject {
         openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
     
+    func sendMessage() {
+        guard !typingMessage.isEmpty else { return }
+        Task {
+            let tempMessage = typingMessage.trimmingCharacters(in: .whitespaces)
+            if !tempMessage.isEmpty {
+                typingMessage = ""
+                await generateImage(prompt: tempMessage)
+            }
+        }
+    }
+    
     func generateImage(prompt: String) async {
         self.addMessage(prompt, type: .text, isUserMessage: true)
         self.addMessage("", type: .indicator, isUserMessage: false)
@@ -56,17 +67,6 @@ class DalleViewModel: ObservableObject {
             
             if self.messages.count > 100 {
                 self.messages.removeFirst()
-            }
-        }
-    }
-    
-    func sendMessage() {
-        guard !typingMessage.isEmpty else { return }
-        Task {
-            let tempMessage = typingMessage.trimmingCharacters(in: .whitespaces)
-            if !tempMessage.isEmpty {
-                typingMessage = ""
-                await generateImage(prompt: tempMessage)
             }
         }
     }

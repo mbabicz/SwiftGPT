@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class ImageSaver: NSObject {
     
     func writeToPhotoAlbum(image: UIImage) {
