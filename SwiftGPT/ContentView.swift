@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  OpenAI chat-dalle
+//  SwiftGPT
 //
-//  Created by kz on 07/02/2023.
+//  Created by mbabicz on 07/02/2023.
 //
 
 import SwiftUI
@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView {
-                GPT3View().tabItem{
+                ChatGPTView().tabItem{
                     Label("CHAT BOT", systemImage: "ellipses.bubble")
                 }
                 DalleView().tabItem{

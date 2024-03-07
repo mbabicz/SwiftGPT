@@ -1,18 +1,20 @@
 //
-//  GPT3ViewModel.swift
-//  OpenAI chat-dalle
+//  GPTViewModel.swift
+//  SwiftGPT
 //
-//  Created by kz on 05/03/2023.
+//  Created by mbabicz on 05/03/2023.
 //
 
 import Foundation
 import ChatGPTSwift
 
-class GPT3ViewModel: ObservableObject {
+class GPTViewModel: ObservableObject {
 
-    let api = ChatGPTAPI(apiKey: "API_KEY")
+    let api = ChatGPTAPI(apiKey: API.apiKey)
     @Published var messages = [Message]()
-    
+    @Published var typingMessage: String = ""
+    let bottomID = UUID()
+
     func getResponse(text: String) async{
         
         self.addMessage(text, type: .text, isUserMessage: true)
@@ -52,6 +54,15 @@ class GPT3ViewModel: ObservableObject {
             if self.messages.count > 100 {
                 self.messages.removeFirst()
             }
+        }
+    }
+    
+    func sendMessage() {
+        guard !typingMessage.isEmpty else { return }
+        let tempMessage = typingMessage
+        typingMessage = ""
+        Task{
+            await getResponse(text: tempMessage)
         }
     }
     

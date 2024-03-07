@@ -1,14 +1,14 @@
 //
-//  OpenAI_chat_dalleApp.swift
-//  OpenAI chat-dalle
+//  SwiftGPTApp.swift
+//  SwiftGPT
 //
-//  Created by kz on 07/02/2023.
+//  Created by mbabicz on 07/02/2023.
 //
 
 import SwiftUI
 
 @main
-struct OpenAI_chat_dalleApp: App {
+struct SwiftGPTApp: App {
     let dalleViewModel = DalleViewModel()
 
     var body: some Scene {

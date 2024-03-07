@@ -1,8 +1,8 @@
 //
 //  DalleViewModel.swift
-//  OpenAI GPT-DALL-E
+//  SwiftGPT
 //
-//  Created by kz on 06/02/2023.
+//  Created by mbabicz on 06/02/2023.
 //
 
 import Foundation
@@ -12,9 +12,11 @@ class DalleViewModel: ObservableObject {
     private let apiKey: String
     private var openAI: OpenAI
     @Published var messages = [Message]()
-    
+    @Published var typingMessage: String = ""
+    let bottomID = UUID()
+
     init() {
-        apiKey = "API_KEY"
+        apiKey = API.apiKey
         openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
     
@@ -54,6 +56,17 @@ class DalleViewModel: ObservableObject {
             
             if self.messages.count > 100 {
                 self.messages.removeFirst()
+            }
+        }
+    }
+    
+    func sendMessage() {
+        guard !typingMessage.isEmpty else { return }
+        Task {
+            let tempMessage = typingMessage.trimmingCharacters(in: .whitespaces)
+            if !tempMessage.isEmpty {
+                typingMessage = ""
+                await generateImage(prompt: tempMessage)
             }
         }
     }
