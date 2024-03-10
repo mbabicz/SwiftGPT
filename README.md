@@ -15,13 +15,10 @@ The DALL·E client is provided by [OpenAIKit](https://github.com/MarcoDotIO/Open
 |:-:|:-:|
 
 ## INSTALLATION
-* Install all required packages ([OpenAIKit](https://github.com/MarcoDotIO/OpenAIKit), [ChatGPTSwift](https://github.com/alfianlosari/ChatGPTSwift)) <br />
-* Enter your [api key](https://openai.com/api/) in these files: <br />
-`OpenAI chat-dalle/ViewModels/DalleViewModel.swift` <br />
-`OpenAI chat-dalle/ViewModels/GPT3ViewModel.swift` <br />
+* Enter your [api key](https://openai.com/api/) in API.swift file
 here:
 ```swift
-apiKey = "API_KEY"
+static let apiKey = "API_KEY"
 ```
 ## OPENAI CHATBOT
 |<img src = "https://user-images.githubusercontent.com/49866616/220471468-b9a92f20-027d-4258-87fc-c300425d3d17.png"  width="286" height="558" />|<img src = "https://user-images.githubusercontent.com/49866616/220471564-14265138-4158-4d69-a817-4743ac62279a.png"  width="286" height="558" />|
