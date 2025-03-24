@@ -19,36 +19,31 @@ struct MessageView: View {
                         .frame(width: 30, height: 30)
                         .padding(.trailing, 10)
 
-                    switch message.type {
-                    case .text:
-                        let output = (message.content as! String).trimmingCharacters(in: .whitespacesAndNewlines)
+                    switch message.content {
+                    case let .text(output):
+                        Text(output.trimmingCharacters(in: .whitespacesAndNewlines))
                         Text(output)
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                             .textSelection(.enabled)
-                    case .error:
-                        let output = (message.content as! String).trimmingCharacters(in: .whitespacesAndNewlines)
+                    case let .error(output):
+                        Text(output.trimmingCharacters(in: .whitespacesAndNewlines))
                         Text(output)
-                            .foregroundColor(.red)
+                            .foregroundStyle(.red)
                             .textSelection(.enabled)
-
-                    case .image:
-                        HStack(alignment: .center) {
-                            Image(uiImage: message.content as! UIImage)
+                    case let .image(imageData):
+                        if let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(13)
                                 .shadow(color: .green, radius: 1)
-                            VStack{
+                            VStack {
                                 Button(action: {
-                                    guard let image = message.content as? UIImage else {
-                                        return
-                                    }
-                                    
-                                    let avc = UIActivityViewController(activityItems: [image, UIImage()], applicationActivities: nil)
-                                    
+                                    let avc = UIActivityViewController(activityItems: [uiImage], applicationActivities: nil)
+
                                     avc.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
                                         if completed && activityType == .saveToCameraRoll {
-                                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                                            UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
                                         }
                                     }
                                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -58,21 +53,16 @@ struct MessageView: View {
                                     }
                                 }) {
                                     Image(systemName: "square.and.arrow.up")
-                                        .foregroundColor(.white)
+                                        .foregroundStyle(.white)
                                 }
                                 .padding()
                                 
                                 Button(action: {
-                                    guard let image = message.content as? UIImage else {
-                                        return
-                                    }
-                                    
                                     let imageSaver = ImageSaver()
-                                    imageSaver.writeToPhotoAlbum(image: image)
-
+                                    imageSaver.writeToPhotoAlbum(image: uiImage)
                                 }) {
                                     Image(systemName: "square.and.arrow.down")
-                                        .foregroundColor(.white)
+                                        .foregroundStyle(.white)
                                 }
                                 .padding()
                                 

@@ -6,24 +6,17 @@
 //
 
 import Foundation
-import UIKit
 import SwiftUI
 
-enum MessageType {
-    case text
-    case image
+enum MessageContent: Equatable {
+    case text(String)
+    case image(Data)
     case indicator
-    case error
+    case error(String)
 }
 
 struct Message: Identifiable, Equatable {
     var id = UUID()
-    var content: Any
-    let type: MessageType
+    var content: MessageContent
     let isUserMessage: Bool
-
-    static func ==(lhs: Message, rhs: Message) -> Bool {
-        return lhs.id == rhs.id && lhs.content as AnyObject === rhs.content as AnyObject && lhs.type == rhs.type && lhs.isUserMessage == rhs.isUserMessage
-    }
 }
-    

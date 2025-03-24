@@ -60,7 +60,7 @@ struct ChatGPTView: View {
             TextField("Message...", text: $viewModel.typingMessage)
                 .focused($isFocused)
                 .padding()
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .lineLimit(3)
                 .disableAutocorrection(true)
                 .autocapitalization(.none)
@@ -72,7 +72,7 @@ struct ChatGPTView: View {
                 Image(systemName: viewModel.typingMessage.isEmpty ? "circle" : "paperplane.fill")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(viewModel.typingMessage.isEmpty ? .white.opacity(0.75) : .white)
+                    .foregroundStyle(viewModel.typingMessage.isEmpty ? .white.opacity(0.75) : .white)
                     .frame(width: 20, height: 20)
                     .padding()
             }
