@@ -22,6 +22,7 @@
 		2981BF2D299258D200D40C7A /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2C299258D200D40C7A /* MessageView.swift */; };
 		2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
 		2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF342992964000D40C7A /* DalleViewModel.swift */; };
+		6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6E44C7FF2D93121500268862 /* SFSafeSymbols */; };
 		6E9971E82B9A730900BEEB12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9971E72B9A730900BEEB12 /* API.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 			files = (
 				2917754E29B606EC00EEC302 /* OpenAI in Frameworks */,
 				2917755329B60B2100EEC302 /* ChatGPTSwift in Frameworks */,
+				6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */,
 				2981BF212992578800D40C7A /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +167,7 @@
 				2981BF202992578800D40C7A /* OpenAIKit */,
 				2917754D29B606EC00EEC302 /* OpenAI */,
 				2917755229B60B2100EEC302 /* ChatGPTSwift */,
+				6E44C7FF2D93121500268862 /* SFSafeSymbols */,
 			);
 			productName = "OpenAI chat-dalle";
 			productReference = 2981BF0E299256BB00D40C7A /* SwiftGPT.app */;
@@ -199,6 +202,7 @@
 				2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */,
 				2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 2981BF0F299256BB00D40C7A /* Products */;
 			projectDirPath = "";
@@ -496,6 +500,14 @@
 				kind = branch;
 			};
 		};
+		6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
 		6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
@@ -521,6 +533,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */;
 			productName = OpenAIKit;
+		};
+		6E44C7FF2D93121500268862 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

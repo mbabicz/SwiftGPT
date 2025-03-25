@@ -42,3 +42,10 @@ implicitly_unwrapped_optional:
 
 disabled_rules:
   - multiple_closures_with_trailing_closure
+
+custom_rules:
+  sf_safe_symbol:
+    name: "Safe SFSymbol"
+    message: "Use `SFSafeSymbols` via `systemSymbol` parameters for type safety."
+    regex: "(Image\\(systemName:)|(NSImage\\(symbolName:)|(Label[^,]+?,\\s*systemImage:)|(UIApplicationShortcutIcon\\(systemImageName:)"
+    severity: error

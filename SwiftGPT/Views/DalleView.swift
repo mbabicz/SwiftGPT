@@ -70,7 +70,7 @@ struct DalleView: View {
                 .keyboardType(.alphabet)
 
             Button(action: viewModel.sendMessage) {
-                Image(systemName: viewModel.typingMessage.isEmpty ? "circle" : "paperplane.fill")
+                Image(systemSymbol: viewModel.typingMessage.isEmpty ? .circle : .paperplaneFill)
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(viewModel.typingMessage.isEmpty ? .white.opacity(0.75) : .white)
@@ -86,7 +86,7 @@ struct DalleView: View {
 
     private var emptyStateView: some View {
         VStack {
-            Image(systemName: "paintbrush")
+            Image(systemSymbol: .paintbrush)
                 .font(.largeTitle)
             Text("Write your first message!")
                 .font(.subheadline)

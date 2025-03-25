@@ -69,7 +69,7 @@ struct ChatGPTView: View {
                 self.isFocused = false
                 viewModel.sendMessage()
             }) {
-                Image(systemName: viewModel.typingMessage.isEmpty ? "circle" : "paperplane.fill")
+                Image(systemSymbol: viewModel.typingMessage.isEmpty ? .circle : .paperplaneFill)
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(viewModel.typingMessage.isEmpty ? .white.opacity(0.75) : .white)
@@ -85,7 +85,7 @@ struct ChatGPTView: View {
 
     private var emptyStateView: some View {
         VStack {
-            Image(systemName: "ellipses.bubble")
+            Image(systemSymbol: .ellipsisBubble)
                 .font(.largeTitle)
             Text("Write your first message!")
                 .font(.subheadline)

@@ -13,10 +13,10 @@ struct ContentView: View {
         NavigationView {
             TabView {
                 ChatGPTView().tabItem {
-                    Label("CHAT BOT", systemImage: "ellipses.bubble")
+                    Label("CHAT BOT", systemSymbol: .ellipsisBubble)
                 }
                 DalleView().tabItem {
-                    Label("DALL-E 2", systemImage: "paintbrush")
+                    Label("DALL-E 2", systemSymbol: .paintbrush)
                 }
             }
         }

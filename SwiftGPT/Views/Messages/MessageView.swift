@@ -14,7 +14,7 @@ struct MessageView: View {
         HStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(alignment: message.isUserMessage ? .center : .top) {
-                    Image(message.isUserMessage ? "person-icon" : "gpt-logo")
+                    Image(message.isUserMessage ? .personIcon : .gptLogo)
                         .resizable()
                         .frame(width: 30, height: 30)
                         .padding(.trailing, 10)
@@ -41,7 +41,7 @@ struct MessageView: View {
                                 Button(action: {
                                     let avc = UIActivityViewController(activityItems: [uiImage], applicationActivities: nil)
 
-                                    avc.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
+                                    avc.completionWithItemsHandler = { (activityType, completed, _, _) in
                                         if completed && activityType == .saveToCameraRoll {
                                             UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
                                         }
@@ -52,7 +52,7 @@ struct MessageView: View {
                                         rootViewController.present(avc, animated: true, completion: nil)
                                     }
                                 }) {
-                                    Image(systemName: "square.and.arrow.up")
+                                    Image(systemSymbol: .squareAndArrowUp)
                                         .foregroundStyle(.white)
                                 }
                                 .padding()
@@ -61,7 +61,7 @@ struct MessageView: View {
                                     let imageSaver = ImageSaver()
                                     imageSaver.writeToPhotoAlbum(image: uiImage)
                                 }) {
-                                    Image(systemName: "square.and.arrow.down")
+                                    Image(systemSymbol: .squareAndArrowDown)
                                         .foregroundStyle(.white)
                                 }
                                 .padding()
