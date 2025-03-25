@@ -28,7 +28,7 @@ struct ChatGPTView: View {
             }
         }
     }
-    
+
     // MARK: - Private Views
     private var messagesView: some View {
         Group {

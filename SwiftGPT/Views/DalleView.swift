@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct DalleView: View {
-    
     @StateObject var viewModel = DalleViewModel()
     @FocusState private var isFocused: Bool
-    
+
     // MARK: - Body
     var body: some View {
         NavigationView {
@@ -30,7 +29,7 @@ struct DalleView: View {
             }
         }
     }
-    
+
     // MARK: - Message Views
     private var messagesView: some View {
         Group {
@@ -41,7 +40,7 @@ struct DalleView: View {
             }
         }
     }
-    
+
     private var messagesScrollView: some View {
         ScrollViewReader { reader in
             ScrollView {
@@ -58,9 +57,9 @@ struct DalleView: View {
             }
         }
     }
-    
+
     private var inputArea: some View {
-        HStack(alignment: .center){
+        HStack(alignment: .center) {
             TextField("Message...", text: $viewModel.typingMessage, axis: .vertical)
                 .focused($isFocused)
                 .padding()
@@ -69,7 +68,7 @@ struct DalleView: View {
                 .disableAutocorrection(true)
                 .autocapitalization(.none)
                 .keyboardType(.alphabet)
-            
+
             Button(action: viewModel.sendMessage) {
                 Image(systemName: viewModel.typingMessage.isEmpty ? "circle" : "paperplane.fill")
                     .resizable()
@@ -84,7 +83,7 @@ struct DalleView: View {
         .padding([.leading, .trailing, .bottom], 10)
         .shadow(color: .black, radius: 0.5)
     }
-    
+
     private var emptyStateView: some View {
         VStack {
             Image(systemName: "paintbrush")
@@ -95,7 +94,7 @@ struct DalleView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-    
+
     private func scrollToBottom(with reader: ScrollViewProxy) {
         withAnimation {
             reader.scrollTo(viewModel.bottomID, anchor: .bottom)

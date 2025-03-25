@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ImageSaver: NSObject {
-    
+
     func writeToPhotoAlbum(image: UIImage) {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
     }

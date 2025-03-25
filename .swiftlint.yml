@@ -1,0 +1,44 @@
+line_length:
+  warning: 160
+  error: 200
+  ignores_comments: true
+
+function_body_length:
+  warning: 100
+  error: 160
+
+file_length:
+  warning: 400
+  error: 600
+
+nesting:
+  type_level: 6
+
+vertical_whitespace:
+  max_empty_lines: 1
+
+large_tuple:
+  warning: 5
+  error: 6
+
+opt_in_rules:
+  - force_cast # as!
+  - force_try # try!
+  - force_unwrapping # !
+  - implicitly_unwrapped_optional # !
+  - unneeded_parentheses_in_closure_argument # ()
+
+force_cast:
+  severity: warning
+
+force_try:
+  severity: warning
+
+force_unwrapping:
+  severity: warning
+
+implicitly_unwrapped_optional:
+  severity: warning
+
+disabled_rules:
+  - multiple_closures_with_trailing_closure

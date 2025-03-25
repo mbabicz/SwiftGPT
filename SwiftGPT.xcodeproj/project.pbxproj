@@ -152,6 +152,7 @@
 			buildConfigurationList = 2981BF1C299256BE00D40C7A /* Build configuration list for PBXNativeTarget "SwiftGPT" */;
 			buildPhases = (
 				2981BF0A299256BB00D40C7A /* Sources */,
+				6E44C7FD2D9310B900268862 /* SwiftLint */,
 				2981BF0B299256BB00D40C7A /* Frameworks */,
 				2981BF0C299256BB00D40C7A /* Resources */,
 			);
@@ -197,6 +198,7 @@
 				2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */,
 				2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */,
 				2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+				6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 2981BF0F299256BB00D40C7A /* Products */;
 			projectDirPath = "";
@@ -218,6 +220,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E44C7FD2D9310B900268862 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2981BF0A299256BB00D40C7A /* Sources */ = {
@@ -367,6 +392,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftGPT/Preview Content\"";
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftGPT-Info.plist";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = .;
@@ -399,6 +425,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftGPT/Preview Content\"";
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftGPT-Info.plist";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = .;
@@ -467,6 +494,14 @@
 			requirement = {
 				branch = main;
 				kind = branch;
+			};
+		};
+		6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.58.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

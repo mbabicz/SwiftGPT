@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     var body: some View {
         NavigationView {
             TabView {
-                ChatGPTView().tabItem{
+                ChatGPTView().tabItem {
                     Label("CHAT BOT", systemImage: "ellipses.bubble")
                 }
-                DalleView().tabItem{
+                DalleView().tabItem {
                     Label("DALL-E 2", systemImage: "paintbrush")
                 }
             }
@@ -28,4 +28,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

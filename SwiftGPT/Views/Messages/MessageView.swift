@@ -13,7 +13,7 @@ struct MessageView: View {
     var body: some View {
         HStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
-                HStack(alignment: message.isUserMessage ? .center : .top){
+                HStack(alignment: message.isUserMessage ? .center : .top) {
                     Image(message.isUserMessage ? "person-icon" : "gpt-logo")
                         .resizable()
                         .frame(width: 30, height: 30)
@@ -56,7 +56,7 @@ struct MessageView: View {
                                         .foregroundStyle(.white)
                                 }
                                 .padding()
-                                
+
                                 Button(action: {
                                     let imageSaver = ImageSaver()
                                     imageSaver.writeToPhotoAlbum(image: uiImage)
@@ -65,7 +65,6 @@ struct MessageView: View {
                                         .foregroundStyle(.white)
                                 }
                                 .padding()
-                                
                             }
                         }
                     case .indicator:
