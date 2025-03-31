@@ -23,7 +23,6 @@
 		2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
 		2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF342992964000D40C7A /* DalleViewModel.swift */; };
 		6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6E44C7FF2D93121500268862 /* SFSafeSymbols */; };
-		6E9971E82B9A730900BEEB12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9971E72B9A730900BEEB12 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		2981BF2C299258D200D40C7A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIndicatorView.swift; sourceTree = "<group>"; };
 		2981BF342992964000D40C7A /* DalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleViewModel.swift; sourceTree = "<group>"; };
-		6E9971E72B9A730900BEEB12 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 		2981BF10299256BB00D40C7A /* SwiftGPT */ = {
 			isa = PBXGroup;
 			children = (
-				6E9971E72B9A730900BEEB12 /* API.swift */,
 				2905CCC429F919C400D4F968 /* Extensions */,
 				29646505299F7E02005146FD /* Models */,
 				2981BF262992583C00D40C7A /* ViewModels */,
@@ -161,6 +158,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6E44C8032D9AF43900268862 /* PBXTargetDependency */,
 			);
 			name = SwiftGPT;
 			packageProductDependencies = (
@@ -203,6 +201,7 @@
 				2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				6E44C8012D9AF41F00268862 /* XCRemoteSwiftPackageReference "SecretsManager" */,
 			);
 			productRefGroup = 2981BF0F299256BB00D40C7A /* Products */;
 			projectDirPath = "";
@@ -253,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E9971E82B9A730900BEEB12 /* API.swift in Sources */,
 				2981BF2F299258F800D40C7A /* MessageIndicatorView.swift in Sources */,
 				2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */,
 				29646507299F7E12005146FD /* Message.swift in Sources */,
@@ -268,6 +266,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E44C8032D9AF43900268862 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6E44C8022D9AF43900268862 /* SecretsManagerPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2981BF1A299256BE00D40C7A /* Debug */ = {
@@ -508,6 +513,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		6E44C8012D9AF41F00268862 /* XCRemoteSwiftPackageReference "SecretsManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vdka/SecretsManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 		6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
@@ -538,6 +551,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		6E44C8022D9AF43900268862 /* SecretsManagerPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E44C8012D9AF41F00268862 /* XCRemoteSwiftPackageReference "SecretsManager" */;
+			productName = "plugin:SecretsManagerPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

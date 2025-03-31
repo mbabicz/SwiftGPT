@@ -15,7 +15,7 @@ class GPTViewModel: ObservableObject {
     @Published var typingMessage: String = ""
     let bottomID = UUID()
 
-    init(apiKey: String = API.apiKey) {
+    init(apiKey: String = Secrets.openaiApiKey) {
         self.api = ChatGPTAPI(apiKey: apiKey)
     }
 
