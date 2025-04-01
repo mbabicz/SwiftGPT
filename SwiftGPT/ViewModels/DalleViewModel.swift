@@ -9,15 +9,13 @@ import Foundation
 import OpenAIKit
 
 final class DalleViewModel: ObservableObject {
-    private let apiKey: String
     private var openAI: OpenAI
     @Published var messages = [Message]()
     @Published var typingMessage: String = ""
     let bottomID = UUID()
 
     init() {
-        apiKey = Secrets.openaiApiKey
-        openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
+        openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: Secrets.openaiApiKey))
     }
 
     func sendMessage() {

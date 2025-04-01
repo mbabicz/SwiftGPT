@@ -9,7 +9,7 @@ import SwiftUI
 import SFSafeSymbols
 
 @main
-struct SwiftGPTApp: App {
+struct SwiftGPT: App {
 
     var body: some Scene {
         WindowGroup {
