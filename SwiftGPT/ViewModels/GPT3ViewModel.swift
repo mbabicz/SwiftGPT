@@ -8,7 +8,7 @@
 import Foundation
 import ChatGPTSwift
 
-class GPTViewModel: ObservableObject {
+final class GPTViewModel: ObservableObject {
 
     private let api: ChatGPTAPI
     @Published var messages: [Message] = []

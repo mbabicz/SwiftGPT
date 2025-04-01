@@ -7,7 +7,8 @@
 
 import Foundation
 import OpenAIKit
-class DalleViewModel: ObservableObject {
+
+final class DalleViewModel: ObservableObject {
     private let apiKey: String
     private var openAI: OpenAI
     @Published var messages = [Message]()
