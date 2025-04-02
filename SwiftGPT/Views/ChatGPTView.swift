@@ -23,7 +23,7 @@ struct ChatGPTView: View {
                 }
                 .background(Color(red: 53/255, green: 54/255, blue: 65/255))
                 .onTapGesture { isFocused = false }
-                .navigationTitle("GPT 3.5 Turbo")
+                .navigationTitle(L10n.Chatgpt.Tab.title)
                 .navigationBarTitleDisplayMode(.inline)
             }
         }
@@ -57,7 +57,7 @@ struct ChatGPTView: View {
 
     private var inputArea: some View {
         HStack(alignment: .center) {
-            TextField("Message...", text: $viewModel.typingMessage)
+            TextField(L10n.Message.Textfield.placeholder, text: $viewModel.typingMessage)
                 .focused($isFocused)
                 .padding()
                 .foregroundStyle(.white)
@@ -87,7 +87,7 @@ struct ChatGPTView: View {
         VStack {
             Image(systemSymbol: .ellipsisBubble)
                 .font(.largeTitle)
-            Text("Write your first message!")
+            Text(L10n.Chat.Introduce.title)
                 .font(.subheadline)
                 .padding(10)
         }

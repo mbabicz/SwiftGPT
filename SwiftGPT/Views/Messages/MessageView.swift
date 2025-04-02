@@ -19,7 +19,7 @@ struct MessageView: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                         .padding(.trailing, 10)
-                    
+
                     switch message.content {
                     case let .text(output):
                         Text(output.trimmingCharacters(in: .whitespacesAndNewlines))
@@ -41,7 +41,7 @@ struct MessageView: View {
                             VStack {
                                 Button(action: {
                                     let avc = UIActivityViewController(activityItems: [uiImage], applicationActivities: nil)
-                                    
+
                                     avc.completionWithItemsHandler = { (activityType, completed, _, _) in
                                         if completed && activityType == .saveToCameraRoll {
                                             UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
@@ -57,7 +57,7 @@ struct MessageView: View {
                                         .foregroundStyle(.white)
                                 }
                                 .padding()
-                                
+
                                 Button(action: {
                                     Task {
                                         try await saveImageToLibrary(uiImage)
@@ -80,9 +80,9 @@ struct MessageView: View {
         }
         .background(message.isUserMessage ? Color(red: 53/255, green: 54/255, blue: 65/255) : Color(red: 68/255, green: 70/255, blue: 83/255))
         .shadow( radius: message.isUserMessage ? 0 : 0.5)
-        
+
     }
-    
+
     func saveImageToLibrary(_ image: UIImage) async throws {
         try await PHPhotoLibrary.shared().performChanges {
             PHAssetChangeRequest.creationRequestForAsset(from: image)

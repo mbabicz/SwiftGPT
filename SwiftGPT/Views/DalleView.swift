@@ -24,7 +24,7 @@ struct DalleView: View {
                 }
                 .background(Color(red: 53/255, green: 54/255, blue: 65/255))
                 .onTapGesture { isFocused = false }
-                .navigationTitle("DALL·E 2")
+                .navigationTitle(L10n.Dalle.Tab.title)
                 .navigationBarTitleDisplayMode(.inline)
             }
         }
@@ -60,7 +60,7 @@ struct DalleView: View {
 
     private var inputArea: some View {
         HStack(alignment: .center) {
-            TextField("Message...", text: $viewModel.typingMessage, axis: .vertical)
+            TextField(L10n.Message.Textfield.placeholder, text: $viewModel.typingMessage, axis: .vertical)
                 .focused($isFocused)
                 .padding()
                 .foregroundStyle(.white)
@@ -88,7 +88,7 @@ struct DalleView: View {
         VStack {
             Image(systemSymbol: .paintbrush)
                 .font(.largeTitle)
-            Text("Write your first message!")
+            Text(L10n.Chat.Introduce.title)
                 .font(.subheadline)
                 .padding(10)
         }
