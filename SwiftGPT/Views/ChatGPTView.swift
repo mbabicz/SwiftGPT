@@ -12,20 +12,15 @@ struct ChatGPTView: View {
     @FocusState private var isFocused: Bool
 
     var body: some View {
-        NavigationView {
-            GeometryReader { _ in
-                Color(red: 63/255, green: 66/255, blue: 78/255, opacity: 1)
-                    .contentShape(Rectangle())
-                    .edgesIgnoringSafeArea(.all)
-                VStack(alignment: .leading) {
-                    messagesView
-                    inputArea
-                }
-                .background(Color(red: 53/255, green: 54/255, blue: 65/255))
-                .onTapGesture { isFocused = false }
-                .navigationTitle(L10n.Chatgpt.Tab.title)
-                .navigationBarTitleDisplayMode(.inline)
+        NavigationStack {
+            VStack(alignment: .leading) {
+                messagesView
+                inputArea
             }
+            .background(.appBackground)
+            .onTapGesture { isFocused = false }
+            .navigationTitle(L10n.Chatgpt.Tab.title)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 
@@ -77,7 +72,7 @@ struct ChatGPTView: View {
                     .padding()
             }
         }
-        .background(Color(red: 63/255, green: 66/255, blue: 78/255))
+        .background(.textFieldBackground)
         .cornerRadius(12)
         .padding([.leading, .trailing, .bottom], 10)
         .shadow(color: .black, radius: 0.5)

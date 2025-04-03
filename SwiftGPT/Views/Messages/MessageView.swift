@@ -78,7 +78,7 @@ struct MessageView: View {
             }
             Spacer()
         }
-        .background(message.isUserMessage ? Color(red: 53/255, green: 54/255, blue: 65/255) : Color(red: 68/255, green: 70/255, blue: 83/255))
+        .background(message.isUserMessage ? Color(.userMessageBackground) : Color(.responseMessageBackground))
         .shadow( radius: message.isUserMessage ? 0 : 0.5)
 
     }
