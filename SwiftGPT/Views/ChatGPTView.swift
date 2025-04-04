@@ -15,7 +15,12 @@ struct ChatGPTView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 messagesView
-                inputArea
+                MessageInputArea(
+                    text: $viewModel.typingMessage,
+                    placeholder: L10n.Message.Textfield.placeholder,
+                    onSend: viewModel.sendMessage,
+                    isFocusedBinding: $isFocused
+                )
             }
             .background(.appBackground)
             .onTapGesture { isFocused = false }
@@ -48,34 +53,6 @@ struct ChatGPTView: View {
             }
             .onAppear { withAnimation { reader.scrollTo(viewModel.bottomID) } }
         }
-    }
-
-    private var inputArea: some View {
-        HStack(alignment: .center) {
-            TextField(L10n.Message.Textfield.placeholder, text: $viewModel.typingMessage)
-                .focused($isFocused)
-                .padding()
-                .foregroundStyle(.white)
-                .lineLimit(3)
-                .disableAutocorrection(true)
-                .autocapitalization(.none)
-
-            Button(action: {
-                self.isFocused = false
-                viewModel.sendMessage()
-            }) {
-                Image(systemSymbol: viewModel.typingMessage.isEmpty ? .circle : .paperplaneFill)
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundStyle(viewModel.typingMessage.isEmpty ? .white.opacity(0.75) : .white)
-                    .frame(width: 20, height: 20)
-                    .padding()
-            }
-        }
-        .background(.textFieldBackground)
-        .cornerRadius(12)
-        .padding([.leading, .trailing, .bottom], 10)
-        .shadow(color: .black, radius: 0.5)
     }
 
     private var emptyStateView: some View {

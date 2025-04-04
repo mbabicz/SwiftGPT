@@ -23,6 +23,7 @@
 		6E41A5442D9CF1090061EDAA /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6E41A5412D9CF1090061EDAA /* swiftgen.yml */; };
 		6E41A5452D9CF1090061EDAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E41A53F2D9CF1090061EDAA /* Localizable.strings */; };
 		6E41A5462D9CF1090061EDAA /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E41A5402D9CF1090061EDAA /* Strings+Generated.swift */; };
+		6E41A5532DA03CEF0061EDAA /* MessageInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E41A5522DA03CEF0061EDAA /* MessageInputArea.swift */; };
 		6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6E44C7FF2D93121500268862 /* SFSafeSymbols */; };
 		6E44C80E2D9CEEC800268862 /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		6E41A53F2D9CF1090061EDAA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6E41A5402D9CF1090061EDAA /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		6E41A5412D9CF1090061EDAA /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		6E41A5522DA03CEF0061EDAA /* MessageInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		2981BF252992581600D40C7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E41A5522DA03CEF0061EDAA /* MessageInputArea.swift */,
 				2981BF272992584B00D40C7A /* Messages */,
 				2981BF2A2992589300D40C7A /* DalleView.swift */,
 				2917754F29B6083800EEC302 /* ChatGPTView.swift */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E41A5462D9CF1090061EDAA /* Strings+Generated.swift in Sources */,
+				6E41A5532DA03CEF0061EDAA /* MessageInputArea.swift in Sources */,
 				6E44C80E2D9CEEC800268862 /* MessageIndicatorView.swift in Sources */,
 				2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */,
 				29646507299F7E12005146FD /* Message.swift in Sources */,
