@@ -1,0 +1,47 @@
+name: PR CI – build only
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: pr-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 25
+    if: github.event.pull_request.user.login == 'mbabicz'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode latest stable
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 'latest-stable'
+
+      - name: Clean DerivedData / SPM build dirs
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData
+          rm -rf .build
+
+      - name: Resolve packages
+        run: |
+          set -euo pipefail
+          xcodebuild -resolvePackageDependencies \
+            -project SwiftGPT.xcodeproj \
+            -scheme "SwiftGPT"
+
+      - name: Build (no code signing)
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project SwiftGPT.xcodeproj \
+            -scheme "SwiftGPT" \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build
