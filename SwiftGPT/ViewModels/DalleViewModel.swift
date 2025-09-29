@@ -42,7 +42,7 @@ final class DalleViewModel: ObservableObject {
             if let imageData = output.pngData() {
                 self.addMessage(.image(imageData), isUserMessage: false)
             } else {
-                self.addMessage(.error("Image conversion error"), isUserMessage: false)
+                self.addMessage(.error(L10n.Dalle.Error.imageConversion), isUserMessage: false)
             }
         } catch {
             debugPrint(error)

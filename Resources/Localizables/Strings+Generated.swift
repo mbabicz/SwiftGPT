@@ -23,6 +23,10 @@ internal enum L10n {
     }
   }
   internal enum Dalle {
+    internal enum Error {
+      /// Image conversion error
+      internal static let imageConversion = L10n.tr("Localizable", "dalle.error.image_conversion", fallback: "Image conversion error")
+    }
     internal enum Tab {
       /// DALL·E 2
       internal static let title = L10n.tr("Localizable", "dalle.tab.title", fallback: "DALL·E 2")

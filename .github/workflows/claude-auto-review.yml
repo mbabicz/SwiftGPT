@@ -1,0 +1,47 @@
+name: Claude Auto Review with Tracking
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+concurrency:
+  group: claude-auto-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false && github.event.pull_request.user.login == 'mbabicz'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          use_sticky_comment: true
+          track_progress: true
+          prompt: |
+            You are an expert PR reviewer. Produce ONE top-level Markdown comment only (no inline code comments).
+            OUTPUT STRUCTURE:
+            1) **Summary (2–4 sentences)** — Plain-language snapshot of what changed in this PR: scope, user-visible impact, main areas/files touched, and the riskiest part.
+            2) **Suggested manual checks** — Non-technical checklist for a tester to click through in the app. Use unchecked boxes only (`- [ ]`). Prefer concrete steps (where to tap/click, expected result). Cover happy path, key edge cases, nearby regressions, and basic cross-device/browser (if relevant).
+            3) **Findings** — Prioritized bullets on correctness, security, performance, tests, and DX. Use file:line hints like `path/to/file.ext:123` when specific.
+            4) **Action items** — Short, prioritized fixes. Include tiny diffs/snippets when helpful.
+            RULES:
+            - Do NOT post inline code comments.
+            - Be precise and brief; no code repetition; no secrets.
+            - If the diff is large, focus on highest-risk parts and test depth.
+            CONTEXT:
+            - REPO: ${{ github.repository }}
+            - PR NUMBER: ${{ github.event.pull_request.number }}
+
+          claude_args: |
+            --model claude-3-5-haiku-20241022
+            --max-turns 3
+            --system-prompt "Write a single top-level review as instructed in the user prompt. Do NOT post inline code comments."

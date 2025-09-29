@@ -1,4 +1,5 @@
 "chatgpt.tab.title" = "CHAT BOT";
 "dalle.tab.title" = "DALL·E 2";
+"dalle.error.image_conversion" = "Image conversion error";
 "message.textfield.placeholder" = "Message...";
 "chat.introduce.title" = "Write your first message!";
