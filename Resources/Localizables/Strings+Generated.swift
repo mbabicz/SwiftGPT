@@ -10,6 +10,38 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum Accessibility {
+    internal enum Button {
+      /// Save image to photos
+      internal static let save = L10n.tr("Localizable", "accessibility.button.save", fallback: "Save image to photos")
+      /// Send message
+      internal static let send = L10n.tr("Localizable", "accessibility.button.send", fallback: "Send message")
+      /// Share image
+      internal static let share = L10n.tr("Localizable", "accessibility.button.share", fallback: "Share image")
+      internal enum Send {
+        /// Sends your message to the AI
+        internal static let hint = L10n.tr("Localizable", "accessibility.button.send.hint", fallback: "Sends your message to the AI")
+      }
+    }
+    internal enum Image {
+      /// Generated image
+      internal static let generated = L10n.tr("Localizable", "accessibility.image.generated", fallback: "Generated image")
+      /// AI avatar
+      internal static let gpt = L10n.tr("Localizable", "accessibility.image.gpt", fallback: "AI avatar")
+      /// User avatar
+      internal static let user = L10n.tr("Localizable", "accessibility.image.user", fallback: "User avatar")
+    }
+    internal enum Tab {
+      /// Chat with GPT
+      internal static let chatgpt = L10n.tr("Localizable", "accessibility.tab.chatgpt", fallback: "Chat with GPT")
+      /// Generate images with DALL·E
+      internal static let dalle = L10n.tr("Localizable", "accessibility.tab.dalle", fallback: "Generate images with DALL·E")
+    }
+    internal enum Textfield {
+      /// Message input field
+      internal static let message = L10n.tr("Localizable", "accessibility.textfield.message", fallback: "Message input field")
+    }
+  }
   internal enum Chat {
     internal enum Introduce {
       /// Write your first message!
@@ -31,6 +63,18 @@ internal enum L10n {
       /// DALL·E 2
       internal static let title = L10n.tr("Localizable", "dalle.tab.title", fallback: "DALL·E 2")
     }
+  }
+  internal enum Error {
+    /// API request failed
+    internal static let api = L10n.tr("Localizable", "error.api", fallback: "API request failed")
+    /// Network error occurred
+    internal static let network = L10n.tr("Localizable", "error.network", fallback: "Network error occurred")
+    /// Failed to save image to Photos
+    internal static let savePhoto = L10n.tr("Localizable", "error.save_photo", fallback: "Failed to save image to Photos")
+    /// Permission denied. Please allow access to Photos in Settings.
+    internal static let savePhotoPermission = L10n.tr("Localizable", "error.save_photo_permission", fallback: "Permission denied. Please allow access to Photos in Settings.")
+    /// An unexpected error occurred
+    internal static let unknown = L10n.tr("Localizable", "error.unknown", fallback: "An unexpected error occurred")
   }
   internal enum Message {
     internal enum Textfield {

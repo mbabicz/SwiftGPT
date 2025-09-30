@@ -14,15 +14,15 @@ struct MessageIndicatorView: View {
             DotView(delay: 0.2)
             DotView(delay: 0.4)
         }
-        .padding(12)
+        .padding(.appSpacingMD)
         .background(Color.gray.opacity(0.25))
-        .cornerRadius(25)
+        .cornerRadius(.appCornerRadiusFull)
     }
 }
 
 struct DotView: View {
-    @State var scale: CGFloat = 0.5
-    @State var delay: Double = 0
+    @State private var scale: CGFloat = 0.5
+    var delay: Double = 0
 
     var body: some View {
         Circle()
@@ -36,8 +36,6 @@ struct DotView: View {
     }
 }
 
-struct MessageIndicatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageIndicatorView()
-    }
+#Preview {
+    MessageIndicatorView()
 }

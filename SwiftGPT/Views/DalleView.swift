@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DalleView: View {
-    @StateObject var viewModel = DalleViewModel()
+    @StateObject private var viewModel = DalleViewModel()
     @FocusState private var isFocused: Bool
 
     var body: some View {
@@ -19,6 +19,7 @@ struct DalleView: View {
                     text: $viewModel.typingMessage,
                     placeholder: L10n.Message.Textfield.placeholder,
                     onSend: viewModel.sendMessage,
+                    isSendEnabled: !viewModel.isLoading && !viewModel.typingMessage.isEmpty,
                     isFocusedBinding: $isFocused
                 )
             }
@@ -43,8 +44,8 @@ struct DalleView: View {
     private var messagesScrollView: some View {
         ScrollViewReader { reader in
             ScrollView {
-                ForEach(viewModel.messages.indices, id: \.self) { index in
-                    MessageView(message: viewModel.messages[index])
+                ForEach(viewModel.messages) { message in
+                    MessageView(message: message)
                 }
                 Text("").id(viewModel.bottomID)
             }
@@ -63,7 +64,7 @@ struct DalleView: View {
                 .font(.largeTitle)
             Text(L10n.Chat.Introduce.title)
                 .font(.subheadline)
-                .padding(10)
+                .padding(.appSpacingSM)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

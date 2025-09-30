@@ -1,5 +1,5 @@
 {
-  "originHash" : "a6e364ebc4829abea796d27747f3ce84c58e9ac60430b158db6be09309b1338a",
+  "originHash" : "5ad93eb81a254a241593b31b01bac2c4853f3487dd95f71d56484b3a0def8bb9",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -62,15 +62,6 @@
       "state" : {
         "branch" : "main",
         "revision" : "9b93156e81491ac53967348e8a5076d323f37e34"
-      }
-    },
-    {
-      "identity" : "secretsmanager",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/vdka/SecretsManager",
-      "state" : {
-        "revision" : "66af2ab2e88b2d68a2385734fa86c87c3236d44f",
-        "version" : "1.1.4"
       }
     },
     {

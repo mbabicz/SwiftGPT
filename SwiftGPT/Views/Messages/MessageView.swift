@@ -10,6 +10,8 @@ import PhotosUI
 
 struct MessageView: View {
     var message: Message
+    @State private var showErrorAlert = false
+    @State private var errorMessage = ""
 
     var body: some View {
         HStack(spacing: 0) {
@@ -17,17 +19,16 @@ struct MessageView: View {
                 HStack(alignment: message.isUserMessage ? .center : .top) {
                     Image(message.isUserMessage ? .personIcon : .gptLogo)
                         .resizable()
-                        .frame(width: 30, height: 30)
-                        .padding(.trailing, 10)
+                        .frame(width: Config.UserInterface.avatarSize, height: Config.UserInterface.avatarSize)
+                        .padding(.trailing, .appSpacingSM)
+                        .accessibilityLabel(message.isUserMessage ? L10n.Accessibility.Image.user : L10n.Accessibility.Image.gpt)
 
                     switch message.content {
                     case let .text(output):
-                        Text(output.trimmingCharacters(in: .whitespacesAndNewlines))
                         Text(output)
                             .foregroundStyle(.white)
                             .textSelection(.enabled)
                     case let .error(output):
-                        Text(output.trimmingCharacters(in: .whitespacesAndNewlines))
                         Text(output)
                             .foregroundStyle(.red)
                             .textSelection(.enabled)
@@ -36,51 +37,46 @@ struct MessageView: View {
                             Image(uiImage: uiImage)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .cornerRadius(13)
+                                .cornerRadius(Config.UserInterface.imageCornerRadius)
                                 .shadow(color: .green, radius: 1)
-                            VStack {
-                                Button(action: {
-                                    let avc = UIActivityViewController(activityItems: [uiImage], applicationActivities: nil)
+                                .accessibilityLabel(L10n.Accessibility.Image.generated)
+                                .contextMenu {
+                                    ShareLink(item: Image(uiImage: uiImage), preview: SharePreview("Generated Image"))
+                                        .accessibilityLabel(L10n.Accessibility.Button.share)
 
-                                    avc.completionWithItemsHandler = { (activityType, completed, _, _) in
-                                        if completed && activityType == .saveToCameraRoll {
-                                            UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
+                                    Button {
+                                        Task {
+                                            do {
+                                                try await saveImageToLibrary(uiImage)
+                                            } catch {
+                                                await MainActor.run {
+                                                    errorMessage = error.localizedDescription
+                                                    showErrorAlert = true
+                                                }
+                                            }
                                         }
+                                    } label: {
+                                        Label("Save to Photos", systemSymbol: .squareAndArrowDown)
                                     }
-                                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                                       let window = windowScene.windows.first(where: { $0.isKeyWindow }),
-                                       let rootViewController = window.rootViewController {
-                                        rootViewController.present(avc, animated: true, completion: nil)
-                                    }
-                                }) {
-                                    Image(systemSymbol: .squareAndArrowUp)
-                                        .foregroundStyle(.white)
+                                    .accessibilityLabel(L10n.Accessibility.Button.save)
                                 }
-                                .padding()
-
-                                Button(action: {
-                                    Task {
-                                        try await saveImageToLibrary(uiImage)
-                                    }
-                                }) {
-                                    Image(systemSymbol: .squareAndArrowDown)
-                                        .foregroundStyle(.white)
-                                }
-                                .padding()
-                            }
                         }
                     case .indicator:
                         MessageIndicatorView()
                     }
                 }
-                .padding([.top, .bottom])
-                .padding(.leading, 10)
+                .padding([.top, .bottom], .appSpacingMD)
+                .padding(.leading, .appSpacingSM)
             }
             Spacer()
         }
         .background(message.isUserMessage ? Color(.userMessageBackground) : Color(.responseMessageBackground))
         .shadow( radius: message.isUserMessage ? 0 : 0.5)
-
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(errorMessage)
+        }
     }
 
     func saveImageToLibrary(_ image: UIImage) async throws {
