@@ -3,49 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917754A29B4963800EEC302 /* GPT3ViewModel.swift */; };
 		2917754E29B606EC00EEC302 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2917754D29B606EC00EEC302 /* OpenAI */; };
-		2917755029B6083800EEC302 /* ChatGPTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2917754F29B6083800EEC302 /* ChatGPTView.swift */; };
 		2917755329B60B2100EEC302 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2917755229B60B2100EEC302 /* ChatGPTSwift */; };
-		29646507299F7E12005146FD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29646506299F7E12005146FD /* Message.swift */; };
-		2981BF12299256BB00D40C7A /* SwiftGPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF11299256BB00D40C7A /* SwiftGPTApp.swift */; };
-		2981BF14299256BB00D40C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF13299256BB00D40C7A /* ContentView.swift */; };
-		2981BF16299256BE00D40C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2981BF15299256BE00D40C7A /* Assets.xcassets */; };
-		2981BF19299256BE00D40C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2981BF18299256BE00D40C7A /* Preview Assets.xcassets */; };
 		2981BF212992578800D40C7A /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2981BF202992578800D40C7A /* OpenAIKit */; };
-		2981BF2B2992589300D40C7A /* DalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2A2992589300D40C7A /* DalleView.swift */; };
-		2981BF2D299258D200D40C7A /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2C299258D200D40C7A /* MessageView.swift */; };
-		2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF342992964000D40C7A /* DalleViewModel.swift */; };
-		6E41A5442D9CF1090061EDAA /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6E41A5412D9CF1090061EDAA /* swiftgen.yml */; };
-		6E41A5452D9CF1090061EDAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E41A53F2D9CF1090061EDAA /* Localizable.strings */; };
-		6E41A5462D9CF1090061EDAA /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E41A5402D9CF1090061EDAA /* Strings+Generated.swift */; };
-		6E41A5532DA03CEF0061EDAA /* MessageInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E41A5522DA03CEF0061EDAA /* MessageInputArea.swift */; };
 		6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6E44C7FF2D93121500268862 /* SFSafeSymbols */; };
-		6E44C80E2D9CEEC800268862 /* MessageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6E023C552E8BEB6D004E7990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2981BF06299256BB00D40C7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2981BF0D299256BB00D40C7A;
+			remoteInfo = SwiftGPT;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		2917754A29B4963800EEC302 /* GPT3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT3ViewModel.swift; sourceTree = "<group>"; };
-		2917754F29B6083800EEC302 /* ChatGPTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTView.swift; sourceTree = "<group>"; };
-		29646506299F7E12005146FD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2981BF0E299256BB00D40C7A /* SwiftGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2981BF11299256BB00D40C7A /* SwiftGPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftGPTApp.swift; path = SwiftGPT/SwiftGPTApp.swift; sourceTree = "<group>"; };
-		2981BF13299256BB00D40C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = SwiftGPT/ContentView.swift; sourceTree = "<group>"; };
-		2981BF15299256BE00D40C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SwiftGPT/Assets.xcassets; sourceTree = "<group>"; };
-		2981BF18299256BE00D40C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2981BF2A2992589300D40C7A /* DalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleView.swift; sourceTree = "<group>"; };
-		2981BF2C299258D200D40C7A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIndicatorView.swift; sourceTree = "<group>"; };
-		2981BF342992964000D40C7A /* DalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalleViewModel.swift; sourceTree = "<group>"; };
-		6E41A53F2D9CF1090061EDAA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		6E41A5402D9CF1090061EDAA /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
-		6E41A5412D9CF1090061EDAA /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		6E41A5522DA03CEF0061EDAA /* MessageInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputArea.swift; sourceTree = "<group>"; };
+		6E023C512E8BEB6D004E7990 /* SwiftGPTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGPTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6E023C522E8BEB6D004E7990 /* SwiftGPTTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftGPTTests; sourceTree = "<group>"; };
+		6E4ADDC32E8BE87A00AD8FA5 /* SwiftGPTTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftGPTTests; sourceTree = "<group>"; };
+		6E4ADDE12E8BE88300AD8FA5 /* SwiftGPT */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftGPT; sourceTree = "<group>"; };
+		6E4ADE002E8BE91A00AD8FA5 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2981BF0B299256BB00D40C7A /* Frameworks */ = {
@@ -59,24 +47,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6E023C4E2E8BEB6D004E7990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		29646505299F7E02005146FD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				29646506299F7E12005146FD /* Message.swift */,
-			);
-			name = Models;
-			path = SwiftGPT/Models;
-			sourceTree = "<group>";
-		};
 		2981BF05299256BB00D40C7A = {
 			isa = PBXGroup;
 			children = (
-				2981BF10299256BB00D40C7A /* SwiftGPT */,
+				6E4ADDC32E8BE87A00AD8FA5 /* SwiftGPTTests */,
+				6E4ADDE12E8BE88300AD8FA5 /* SwiftGPT */,
+				6E023C522E8BEB6D004E7990 /* SwiftGPTTests */,
 				2981BF0F299256BB00D40C7A /* Products */,
-				6E41A5432D9CF1090061EDAA /* Resources */,
+				6E4ADE002E8BE91A00AD8FA5 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,80 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				2981BF0E299256BB00D40C7A /* SwiftGPT.app */,
+				6E023C512E8BEB6D004E7990 /* SwiftGPTTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2981BF10299256BB00D40C7A /* SwiftGPT */ = {
-			isa = PBXGroup;
-			children = (
-				29646505299F7E02005146FD /* Models */,
-				2981BF262992583C00D40C7A /* ViewModels */,
-				2981BF252992581600D40C7A /* Views */,
-				2981BF11299256BB00D40C7A /* SwiftGPTApp.swift */,
-				2981BF13299256BB00D40C7A /* ContentView.swift */,
-				2981BF15299256BE00D40C7A /* Assets.xcassets */,
-				2981BF17299256BE00D40C7A /* Preview Content */,
-			);
-			name = SwiftGPT;
-			sourceTree = "<group>";
-		};
-		2981BF17299256BE00D40C7A /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				2981BF18299256BE00D40C7A /* Preview Assets.xcassets */,
-			);
-			name = "Preview Content";
-			path = "SwiftGPT/Preview Content";
-			sourceTree = "<group>";
-		};
-		2981BF252992581600D40C7A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6E41A5522DA03CEF0061EDAA /* MessageInputArea.swift */,
-				2981BF272992584B00D40C7A /* Messages */,
-				2981BF2A2992589300D40C7A /* DalleView.swift */,
-				2917754F29B6083800EEC302 /* ChatGPTView.swift */,
-			);
-			name = Views;
-			path = SwiftGPT/Views;
-			sourceTree = "<group>";
-		};
-		2981BF262992583C00D40C7A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				2981BF342992964000D40C7A /* DalleViewModel.swift */,
-				2917754A29B4963800EEC302 /* GPT3ViewModel.swift */,
-			);
-			name = ViewModels;
-			path = SwiftGPT/ViewModels;
-			sourceTree = "<group>";
-		};
-		2981BF272992584B00D40C7A /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				2981BF2C299258D200D40C7A /* MessageView.swift */,
-				2981BF2E299258F800D40C7A /* MessageIndicatorView.swift */,
-			);
-			path = Messages;
-			sourceTree = "<group>";
-		};
-		6E41A5422D9CF1090061EDAA /* Localizables */ = {
-			isa = PBXGroup;
-			children = (
-				6E41A53F2D9CF1090061EDAA /* Localizable.strings */,
-				6E41A5402D9CF1090061EDAA /* Strings+Generated.swift */,
-				6E41A5412D9CF1090061EDAA /* swiftgen.yml */,
-			);
-			path = Localizables;
-			sourceTree = "<group>";
-		};
-		6E41A5432D9CF1090061EDAA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6E41A5422D9CF1090061EDAA /* Localizables */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +94,10 @@
 			dependencies = (
 				6E44C8032D9AF43900268862 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				6E4ADDE12E8BE88300AD8FA5 /* SwiftGPT */,
+				6E4ADE002E8BE91A00AD8FA5 /* Resources */,
+			);
 			name = SwiftGPT;
 			packageProductDependencies = (
 				2981BF202992578800D40C7A /* OpenAIKit */,
@@ -188,6 +109,30 @@
 			productReference = 2981BF0E299256BB00D40C7A /* SwiftGPT.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6E023C502E8BEB6D004E7990 /* SwiftGPTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E023C572E8BEB6D004E7990 /* Build configuration list for PBXNativeTarget "SwiftGPTTests" */;
+			buildPhases = (
+				6E023C4D2E8BEB6D004E7990 /* Sources */,
+				6E023C4E2E8BEB6D004E7990 /* Frameworks */,
+				6E023C4F2E8BEB6D004E7990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E023C562E8BEB6D004E7990 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6E023C522E8BEB6D004E7990 /* SwiftGPTTests */,
+				6E4ADDC32E8BE87A00AD8FA5 /* SwiftGPTTests */,
+			);
+			name = SwiftGPTTests;
+			packageProductDependencies = (
+			);
+			productName = SwiftGPTTests;
+			productReference = 6E023C512E8BEB6D004E7990 /* SwiftGPTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,11 +140,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					2981BF0D299256BB00D40C7A = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					6E023C502E8BEB6D004E7990 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 2981BF0D299256BB00D40C7A;
 					};
 				};
 			};
@@ -225,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				2981BF0D299256BB00D40C7A /* SwiftGPT */,
+				6E023C502E8BEB6D004E7990 /* SwiftGPTTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,10 +184,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E41A5442D9CF1090061EDAA /* swiftgen.yml in Resources */,
-				6E41A5452D9CF1090061EDAA /* Localizable.strings in Resources */,
-				2981BF19299256BE00D40C7A /* Preview Assets.xcassets in Resources */,
-				2981BF16299256BE00D40C7A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E023C4F2E8BEB6D004E7990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,23 +224,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E41A5462D9CF1090061EDAA /* Strings+Generated.swift in Sources */,
-				6E41A5532DA03CEF0061EDAA /* MessageInputArea.swift in Sources */,
-				6E44C80E2D9CEEC800268862 /* MessageIndicatorView.swift in Sources */,
-				2917754B29B4963800EEC302 /* GPT3ViewModel.swift in Sources */,
-				29646507299F7E12005146FD /* Message.swift in Sources */,
-				2981BF14299256BB00D40C7A /* ContentView.swift in Sources */,
-				2981BF12299256BB00D40C7A /* SwiftGPTApp.swift in Sources */,
-				2917755029B6083800EEC302 /* ChatGPTView.swift in Sources */,
-				2981BF352992964000D40C7A /* DalleViewModel.swift in Sources */,
-				2981BF2B2992589300D40C7A /* DalleView.swift in Sources */,
-				2981BF2D299258D200D40C7A /* MessageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E023C4D2E8BEB6D004E7990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6E023C562E8BEB6D004E7990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2981BF0D299256BB00D40C7A /* SwiftGPT */;
+			targetProxy = 6E023C552E8BEB6D004E7990 /* PBXContainerItemProxy */;
+		};
 		6E44C8032D9AF43900268862 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 6E44C8022D9AF43900268862 /* SecretsManagerPlugin */;
@@ -330,6 +284,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -393,6 +348,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -424,7 +380,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftGPT/Preview Content\"";
-				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -458,7 +413,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftGPT/Preview Content\"";
-				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -483,6 +437,49 @@
 			};
 			name = Release;
 		};
+		6E023C582E8BEB6D004E7990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TU72F4GFFV;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codecake.SwiftGPTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftGPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftGPT";
+			};
+			name = Debug;
+		};
+		6E023C592E8BEB6D004E7990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TU72F4GFFV;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codecake.SwiftGPTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftGPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftGPT";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +497,15 @@
 			buildConfigurations = (
 				2981BF1D299256BE00D40C7A /* Debug */,
 				2981BF1E299256BE00D40C7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E023C572E8BEB6D004E7990 /* Build configuration list for PBXNativeTarget "SwiftGPTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E023C582E8BEB6D004E7990 /* Debug */,
+				6E023C592E8BEB6D004E7990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

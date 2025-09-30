@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChatGPTView: View {
-    @StateObject var viewModel = GPTViewModel()
+    @StateObject private var viewModel = GPTViewModel()
     @FocusState private var isFocused: Bool
 
     var body: some View {
@@ -19,6 +19,7 @@ struct ChatGPTView: View {
                     text: $viewModel.typingMessage,
                     placeholder: L10n.Message.Textfield.placeholder,
                     onSend: viewModel.sendMessage,
+                    isSendEnabled: !viewModel.isLoading && !viewModel.typingMessage.isEmpty,
                     isFocusedBinding: $isFocused
                 )
             }
@@ -61,7 +62,7 @@ struct ChatGPTView: View {
                 .font(.largeTitle)
             Text(L10n.Chat.Introduce.title)
                 .font(.subheadline)
-                .padding(10)
+                .padding(.appSpacingSM)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

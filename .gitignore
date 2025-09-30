@@ -11,3 +11,7 @@ profile
 
 # system files
 .DS_Store
+
+# Secrets
+Secrets.swift
+**/Secrets.swift

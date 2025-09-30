@@ -23,6 +23,16 @@ jobs:
         with:
           xcode-version: 'latest-stable'
 
+      - name: Install SwiftLint & SwiftFormat
+        run: |
+          brew install swiftlint swiftformat
+
+      - name: Run SwiftLint
+        run: swiftlint lint --strict
+
+      - name: Run SwiftFormat (check only)
+        run: swiftformat --lint .
+
       - name: Clean DerivedData / SPM build dirs
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData
