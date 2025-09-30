@@ -34,10 +34,19 @@ jobs:
           rm -rf ~/Library/Developer/Xcode/DerivedData
           rm -rf .build
 
-      - name: Create .env for CI
+      - name: Create dummy Secrets.swift for CI
         run: |
-          cat > .env << 'EOF'
-          export OPENAI_API_KEY=sk-dummy-key-for-ci-build-only
+          cat > SwiftGPT/Secrets.swift << 'EOF'
+          //
+          //  Secrets.swift
+          //  SwiftGPT - CI Build
+          //
+
+          import Foundation
+
+          enum Secrets {
+              static let openaiApiKey = "dummy-key-for-ci-build"
+          }
           EOF
 
       - name: Resolve packages

@@ -92,7 +92,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6E44C8032D9AF43900268862 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				6E4ADDE12E8BE88300AD8FA5 /* SwiftGPT */,
@@ -167,7 +166,6 @@
 				2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
-				6E44C8012D9AF41F00268862 /* XCRemoteSwiftPackageReference "SecretsManager" */,
 			);
 			productRefGroup = 2981BF0F299256BB00D40C7A /* Products */;
 			projectDirPath = "";
@@ -240,11 +238,7 @@
 		6E023C562E8BEB6D004E7990 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2981BF0D299256BB00D40C7A /* SwiftGPT */;
-			targetProxy = 6E023C552E8BEB6D004E7990 /* PBXContainerItemProxy */;
-		};
-		6E44C8032D9AF43900268862 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 6E44C8022D9AF43900268862 /* SecretsManagerPlugin */;
+			targetProxy = 6E023C555E8BEB6D004E7990 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -545,14 +539,6 @@
 				minimumVersion = 6.2.0;
 			};
 		};
-		6E44C8012D9AF41F00268862 /* XCRemoteSwiftPackageReference "SecretsManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vdka/SecretsManager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.4;
-			};
-		};
 		6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
@@ -583,11 +569,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
-		};
-		6E44C8022D9AF43900268862 /* SecretsManagerPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6E44C8012D9AF41F00268862 /* XCRemoteSwiftPackageReference "SecretsManager" */;
-			productName = "plugin:SecretsManagerPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
