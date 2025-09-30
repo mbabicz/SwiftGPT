@@ -34,10 +34,16 @@ jobs:
           rm -rf ~/Library/Developer/Xcode/DerivedData
           rm -rf .build
 
-      - name: Create .env for CI
+      - name: Generate dummy Secrets.swift for CI
         run: |
-          cat > .env << 'EOF'
-          export OPENAI_API_KEY
+          mkdir -p SwiftGPT/Generated
+          cat > SwiftGPT/Generated/Secrets.swift << 'EOF'
+          // Generated for CI - dummy secrets
+          import struct Foundation.Data
+
+          enum Secrets {
+              static let openaiApiKey = "dummy-key-for-ci-build"
+          }
           EOF
 
       - name: Resolve packages
@@ -45,15 +51,8 @@ jobs:
           set -euo pipefail
           xcodebuild -resolvePackageDependencies \
             -project SwiftGPT.xcodeproj \
-            -scheme "SwiftGPT"
-
-      - name: Build SecretsManager plugin
-        run: |
-          set -euo pipefail
-          xcodebuild -scheme SecretsManager \
-            -destination 'platform=macOS' \
-            -derivedDataPath ./DerivedData \
-            build || echo "SecretsManager build skipped"
+            -scheme "SwiftGPT" \
+            -skipPackagePluginValidation
 
       - name: Build (no code signing)
         run: |
@@ -63,5 +62,6 @@ jobs:
             -scheme "SwiftGPT" \
             -configuration Debug \
             -sdk iphonesimulator \
+            -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
             build
