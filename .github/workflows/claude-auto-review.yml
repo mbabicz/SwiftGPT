@@ -42,6 +42,6 @@ jobs:
             - PR NUMBER: ${{ github.event.pull_request.number }}
 
           claude_args: |
-            --model claude-3-5-haiku-20241022
+            --model claude-sonnet-4-20250514
             --max-turns 3
             --system-prompt "Write a single top-level review as instructed in the user prompt. Do NOT post inline code comments."
