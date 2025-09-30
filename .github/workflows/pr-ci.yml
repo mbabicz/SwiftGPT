@@ -45,8 +45,15 @@ jobs:
           set -euo pipefail
           xcodebuild -resolvePackageDependencies \
             -project SwiftGPT.xcodeproj \
-            -scheme "SwiftGPT" \
-            -skipPackagePluginValidation
+            -scheme "SwiftGPT"
+
+      - name: Build SecretsManager plugin
+        run: |
+          set -euo pipefail
+          xcodebuild -scheme SecretsManager \
+            -destination 'platform=macOS' \
+            -derivedDataPath ./DerivedData \
+            build || echo "SecretsManager build skipped"
 
       - name: Build (no code signing)
         run: |
@@ -56,6 +63,5 @@ jobs:
             -scheme "SwiftGPT" \
             -configuration Debug \
             -sdk iphonesimulator \
-            -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
             build
