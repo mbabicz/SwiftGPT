@@ -23,17 +23,33 @@ jobs:
         with:
           xcode-version: 'latest-stable'
 
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
+      - name: Run SwiftLint
+        run: swiftlint lint --strict
+
       - name: Clean DerivedData / SPM build dirs
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData
           rm -rf .build
+
+      - name: Create dummy Secrets.swift
+        run: |
+          mkdir -p SwiftGPT
+          cat > SwiftGPT/Secrets.swift << 'EOF'
+          enum Secrets {
+              static let openaiApiKey = "dummy-key-for-ci"
+          }
+          EOF
 
       - name: Resolve packages
         run: |
           set -euo pipefail
           xcodebuild -resolvePackageDependencies \
             -project SwiftGPT.xcodeproj \
-            -scheme "SwiftGPT"
+            -scheme "SwiftGPT" \
+            -skipPackagePluginValidation
 
       - name: Build (no code signing)
         run: |
@@ -43,5 +59,6 @@ jobs:
             -scheme "SwiftGPT" \
             -configuration Debug \
             -sdk iphonesimulator \
+            -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
             build
