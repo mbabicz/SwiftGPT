@@ -10,15 +10,10 @@ import OpenAIKit
 
 final class DalleViewModel: ObservableObject {
 
-    private var openAI: OpenAI
     @Published var messages = [Message]()
     @Published var typingMessage: String = ""
     @Published var isLoading: Bool = false
     let bottomID = UUID()
-
-    init(openAI: OpenAI = OpenAI(Configuration(organizationId: Config.API.organizationId, apiKey: Secrets.openaiApiKey))) {
-        self.openAI = openAI
-    }
 
     func sendMessage() {
         guard !typingMessage.isEmpty else { return }
@@ -36,6 +31,14 @@ final class DalleViewModel: ObservableObject {
         await addMessage(.text(prompt), isUserMessage: true)
         await addMessage(.indicator, isUserMessage: false)
 
+        let apiKey = APIKeyManager.shared.openaiApiKey
+        guard !apiKey.isEmpty else {
+            await addMessage(.error("OpenAI API key not set. Please add your key in Settings."), isUserMessage: false)
+            await MainActor.run { isLoading = false }
+            return
+        }
+
+        let openAI = OpenAI(Configuration(organizationId: Config.API.organizationId, apiKey: apiKey))
         let imageParam = ImageParameters(prompt: prompt, resolution: .medium, responseFormat: .base64Json)
 
         do {

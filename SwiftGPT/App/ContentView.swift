@@ -11,7 +11,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            ChatGPTView().tabItem {
+            ClaudeView().tabItem {
                 Label(L10n.Chatgpt.Tab.title, systemSymbol: .ellipsisBubble)
             }
             .accessibilityLabel(L10n.Accessibility.Tab.chatgpt)

@@ -11,15 +11,6 @@
       }
     },
     {
-      "identity" : "chatgptswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alfianlosari/ChatGPTSwift",
-      "state" : {
-        "revision" : "3add305675795c1eeec93d6175a9b04d6f415c15",
-        "version" : "1.4.0"
-      }
-    },
-    {
       "identity" : "collectionconcurrencykit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
@@ -35,24 +26,6 @@
       "state" : {
         "revision" : "729e01bc9b9dab466ac85f21fb9ee2bc1c61b258",
         "version" : "1.8.4"
-      }
-    },
-    {
-      "identity" : "gptencoder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alfianlosari/GPTEncoder.git",
-      "state" : {
-        "revision" : "a86968867ab4380e36b904a14c42215f71efe8b4",
-        "version" : "1.0.4"
-      }
-    },
-    {
-      "identity" : "openai",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/colealanroberts/openai",
-      "state" : {
-        "revision" : "8a428e6644301ca98d2dbb38a11c6b85a545e61c",
-        "version" : "1.0.5"
       }
     },
     {

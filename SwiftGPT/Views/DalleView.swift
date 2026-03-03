@@ -10,6 +10,7 @@ import SwiftUI
 struct DalleView: View {
     @StateObject private var viewModel = DalleViewModel()
     @FocusState private var isFocused: Bool
+    @State private var showSettings = false
 
     var body: some View {
         NavigationStack {
@@ -27,6 +28,18 @@ struct DalleView: View {
             .onTapGesture { isFocused = false }
             .navigationTitle(L10n.Dalle.Tab.title)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showSettings = true
+                    } label: {
+                        Image(systemSymbol: .gearshape)
+                    }
+                }
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
+            }
         }
     }
 

@@ -19,8 +19,8 @@ internal enum L10n {
       /// Share image
       internal static let share = L10n.tr("Localizable", "accessibility.button.share", fallback: "Share image")
       internal enum Send {
-        /// Sends your message to the AI
-        internal static let hint = L10n.tr("Localizable", "accessibility.button.send.hint", fallback: "Sends your message to the AI")
+        /// Sends your message to Claude
+        internal static let hint = L10n.tr("Localizable", "accessibility.button.send.hint", fallback: "Sends your message to Claude")
       }
     }
     internal enum Image {
@@ -32,8 +32,8 @@ internal enum L10n {
       internal static let user = L10n.tr("Localizable", "accessibility.image.user", fallback: "User avatar")
     }
     internal enum Tab {
-      /// Chat with GPT
-      internal static let chatgpt = L10n.tr("Localizable", "accessibility.tab.chatgpt", fallback: "Chat with GPT")
+      /// Chat with Claude
+      internal static let chatgpt = L10n.tr("Localizable", "accessibility.tab.chatgpt", fallback: "Chat with Claude")
       /// Generate images with DALL·E
       internal static let dalle = L10n.tr("Localizable", "accessibility.tab.dalle", fallback: "Generate images with DALL·E")
     }
@@ -50,8 +50,8 @@ internal enum L10n {
   }
   internal enum Chatgpt {
     internal enum Tab {
-      /// CHAT BOT
-      internal static let title = L10n.tr("Localizable", "chatgpt.tab.title", fallback: "CHAT BOT")
+      /// CLAUDE
+      internal static let title = L10n.tr("Localizable", "chatgpt.tab.title", fallback: "CLAUDE")
     }
   }
   internal enum Dalle {

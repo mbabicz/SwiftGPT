@@ -1,4 +1,4 @@
-"chatgpt.tab.title" = "CHAT BOT";
+"chatgpt.tab.title" = "CLAUDE";
 "dalle.tab.title" = "DALL·E 2";
 "dalle.error.image_conversion" = "Image conversion error";
 "message.textfield.placeholder" = "Message...";
@@ -10,10 +10,10 @@
 "error.save_photo_permission" = "Permission denied. Please allow access to Photos in Settings.";
 
 // Accessibility
-"accessibility.tab.chatgpt" = "Chat with GPT";
+"accessibility.tab.chatgpt" = "Chat with Claude";
 "accessibility.tab.dalle" = "Generate images with DALL·E";
 "accessibility.button.send" = "Send message";
-"accessibility.button.send.hint" = "Sends your message to the AI";
+"accessibility.button.send.hint" = "Sends your message to Claude";
 "accessibility.button.share" = "Share image";
 "accessibility.button.save" = "Save image to photos";
 "accessibility.textfield.message" = "Message input field";

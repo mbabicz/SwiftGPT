@@ -17,7 +17,7 @@ struct MessageView: View {
         HStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(alignment: message.isUserMessage ? .center : .top) {
-                    Image(message.isUserMessage ? .personIcon : .gptLogo)
+                    Image(message.isUserMessage ? .personIcon : .claudeLogo)
                         .resizable()
                         .frame(width: Config.UserInterface.avatarSize, height: Config.UserInterface.avatarSize)
                         .padding(.trailing, .appSpacingSM)

@@ -1,12 +1,12 @@
 import Testing
 @testable import SwiftGPT
 
-@Suite("GPT ViewModel Tests")
-struct GPTViewModelTests {
+@Suite("Claude ViewModel Tests")
+struct ClaudeViewModelTests {
 
     @Test("Initial state is empty")
     func initialState() {
-        let viewModel = GPTViewModel()
+        let viewModel = ClaudeViewModel()
 
         #expect(viewModel.messages.isEmpty)
         #expect(viewModel.typingMessage.isEmpty)
@@ -15,7 +15,7 @@ struct GPTViewModelTests {
 
     @Test("Empty message not sent")
     func emptyMessageNotSent() {
-        let viewModel = GPTViewModel()
+        let viewModel = ClaudeViewModel()
         viewModel.typingMessage = ""
 
         viewModel.sendMessage()
@@ -25,7 +25,7 @@ struct GPTViewModelTests {
 
     @Test("Whitespace message not sent")
     func whitespaceMessageNotSent() {
-        let viewModel = GPTViewModel()
+        let viewModel = ClaudeViewModel()
         viewModel.typingMessage = "   "
 
         viewModel.sendMessage()

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2917754E29B606EC00EEC302 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2917754D29B606EC00EEC302 /* OpenAI */; };
-		2917755329B60B2100EEC302 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2917755229B60B2100EEC302 /* ChatGPTSwift */; };
 		2981BF212992578800D40C7A /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2981BF202992578800D40C7A /* OpenAIKit */; };
 		6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6E44C7FF2D93121500268862 /* SFSafeSymbols */; };
 /* End PBXBuildFile section */
@@ -40,8 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2917754E29B606EC00EEC302 /* OpenAI in Frameworks */,
-				2917755329B60B2100EEC302 /* ChatGPTSwift in Frameworks */,
 				6E44C8002D93121500268862 /* SFSafeSymbols in Frameworks */,
 				2981BF212992578800D40C7A /* OpenAIKit in Frameworks */,
 			);
@@ -100,11 +96,9 @@
 			name = SwiftGPT;
 			packageProductDependencies = (
 				2981BF202992578800D40C7A /* OpenAIKit */,
-				2917754D29B606EC00EEC302 /* OpenAI */,
-				2917755229B60B2100EEC302 /* ChatGPTSwift */,
 				6E44C7FF2D93121500268862 /* SFSafeSymbols */,
 			);
-			productName = "OpenAI chat-dalle";
+			productName = "SwiftAI";
 			productReference = 2981BF0E299256BB00D40C7A /* SwiftGPT.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -162,8 +156,6 @@
 			mainGroup = 2981BF05299256BB00D40C7A;
 			packageReferences = (
 				2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */,
-				2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */,
-				2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				6E4DAC9C2D930F87003FA11C /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				6E44C7FE2D93121500268862 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
@@ -378,6 +370,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftGPT-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftAI;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = .;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -390,7 +383,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mbabicz.SwiftGPT.;
+				PRODUCT_BUNDLE_IDENTIFIER = mbabicz.SwiftAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,6 +404,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftGPT-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftAI;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = .;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -423,7 +417,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mbabicz.SwiftGPT.;
+				PRODUCT_BUNDLE_IDENTIFIER = mbabicz.SwiftAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -507,22 +501,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/colealanroberts/openai";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
@@ -550,16 +528,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2917754D29B606EC00EEC302 /* OpenAI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2917754C29B606EC00EEC302 /* XCRemoteSwiftPackageReference "openai" */;
-			productName = OpenAI;
-		};
-		2917755229B60B2100EEC302 /* ChatGPTSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2917755129B60B2100EEC302 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
-			productName = ChatGPTSwift;
-		};
 		2981BF202992578800D40C7A /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2981BF1F2992578800D40C7A /* XCRemoteSwiftPackageReference "OpenAIKit" */;

@@ -42,7 +42,13 @@ enum Config {
 
     // MARK: - API
     enum API {
-        /// OpenAI organization ID
+        /// Claude model used for chat
+        static let claudeModel = "claude-sonnet-4-6"
+
+        /// Maximum tokens for Claude responses
+        static let maxTokens = 1024
+
+        /// OpenAI organization ID (used for DALL·E)
         static let organizationId = "Personal"
     }
 }

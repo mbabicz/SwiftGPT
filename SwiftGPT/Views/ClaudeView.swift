@@ -1,15 +1,16 @@
 //
-//  ChatGPTView.swift
+//  ClaudeView.swift
 //  SwiftGPT
 //
-//  Created by mbabicz on 25/01/2023.
+//  Chat view powered by Anthropic Claude.
 //
 
 import SwiftUI
 
-struct ChatGPTView: View {
-    @StateObject private var viewModel = GPTViewModel()
+struct ClaudeView: View {
+    @StateObject private var viewModel = ClaudeViewModel()
     @FocusState private var isFocused: Bool
+    @State private var showSettings = false
 
     var body: some View {
         NavigationStack {
@@ -27,10 +28,23 @@ struct ChatGPTView: View {
             .onTapGesture { isFocused = false }
             .navigationTitle(L10n.Chatgpt.Tab.title)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showSettings = true
+                    } label: {
+                        Image(systemSymbol: .gearshape)
+                    }
+                }
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
+            }
         }
     }
 
     // MARK: - Private Views
+
     private var messagesView: some View {
         Group {
             if viewModel.messages.isEmpty {
